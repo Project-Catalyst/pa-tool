@@ -12,7 +12,7 @@
       <router-view/>
     </div>
     <div class="button" @click="suggest">
-      Suggest Proposal
+      {{suggestText}}
     </div>
   </div>
 </template>
@@ -53,6 +53,9 @@ export default {
         proposals = this.proposals.filter(p => filters.indexOf(p.category) > -1)
       }
       return proposals.sort((a,b) => (a.no_assessments > b.no_assessments) ? 1 : ((b.no_assessments > a.no_assessments) ? -1 : 0))
+    },
+    suggestText() {
+      return (this.$route.name === 'Home') ? 'Suggest Proposal' : 'Give me another'
     }
   },
   mounted() {

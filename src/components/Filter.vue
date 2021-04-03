@@ -23,6 +23,9 @@ export default {
     selected(newVal) {
       this.$emit('filter-changed', newVal)
     }
+  },
+  mounted() {
+    this.selected = this.categories
   }
 }
 </script>
