@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/ca-tool/'
+  publicPath: (process.env.NODE_ENV === 'production') ? '/ca-tool/' : ''
 }
