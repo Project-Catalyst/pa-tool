@@ -14,6 +14,7 @@
     <div class="button" @click="suggest">
       {{suggestText}}
     </div>
+    <assessed :proposals="proposals" />
   </div>
 </template>
 
@@ -21,6 +22,7 @@
 import categories from './assets/data/categories.json'
 import proposals from './assets/data/proposals.json'
 import CFilter from '@/components/Filter'
+import Assessed from '@/components/Assessed'
 
 export default {
   data() {
@@ -32,7 +34,8 @@ export default {
     }
   },
   components: {
-    CFilter
+    CFilter,
+    Assessed
   },
   methods: {
     updateFilter(newVal) {
@@ -64,6 +67,9 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
 }
