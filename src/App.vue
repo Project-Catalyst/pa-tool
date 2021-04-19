@@ -41,7 +41,9 @@ export default {
     updateFilter(newVal) {
       this.currentIndex = 0
       this.currentFilter = newVal
-      this.$router.push({ name: 'Home' })
+      if (this.$route.name !== 'Home') {
+        this.$router.push({ name: 'Home' })
+      }
     },
     suggest() {
       this.$router.push({ name: 'Proposal', params:{ id: this.filteredProposals[this.currentIndex].id }})
@@ -85,7 +87,6 @@ body {
   background: #f1f1f1;
   min-height: 100vh;
   padding: 0 30px 100px 30px;
-  float: left;
   @include mobile {
     padding: 0 15px 100px 15px;
   }
