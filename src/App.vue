@@ -67,6 +67,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/sass/base/mixins';
 * {
   box-sizing: border-box;
 }
@@ -83,7 +84,11 @@ body {
   color: #2c3e50;
   background: #f1f1f1;
   min-height: 100vh;
-  padding: 0 30px;
+  padding: 0 30px 100px 30px;
+  float: left;
+  @include mobile {
+    padding: 0 15px 100px 15px;
+  }
   .logo {
     width: 150px;
     margin: 0px auto;

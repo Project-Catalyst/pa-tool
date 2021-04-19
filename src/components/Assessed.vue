@@ -46,6 +46,7 @@ export default {
 
 
 <style scoped lang="scss">
+  @import '../assets/sass/base/mixins';
   .assessed-wrapper {
     padding: 0;
     position: fixed;
@@ -54,6 +55,11 @@ export default {
     border: 2px solid black;
     transform: translateY(calc(100% - 38px));
     width: 500px;
+    background: #fff;
+    @include mobile {
+      width: calc(100% - 30px);
+      right: 15px;
+    }
     &.open {
       transform: translateY(0);
     }
@@ -68,6 +74,9 @@ export default {
       width: 100%;
       max-height: 500px;
       overflow: auto;
+      @include mobile {
+        max-height: 80vh;
+      }
       .proposal-preview {
         padding: 10px 20px;
         width: 100%;

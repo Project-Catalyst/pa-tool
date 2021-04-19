@@ -1,9 +1,11 @@
 <template>
   <div class="proposal">
-    <h1>{{proposal.title}}</h1>
-    <h3>Problem statement</h3>
-    <div class="description">{{proposal.description}}</div>
-    <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
+    <div class="content-wrapper">
+      <h1>{{proposal.title}}</h1>
+      <h3>Problem statement</h3>
+      <div class="description">{{proposal.description}}</div>
+      <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
+    </div>
     <a class="button" :href="proposal.url" target="blank">
       Take me there
     </a>
@@ -65,6 +67,9 @@ export default {
 
 <style lang="scss">
 .description {
+  margin-bottom: 40px;
+}
+.content-wrapper {
   margin-bottom: 40px;
 }
 </style>
