@@ -3,14 +3,14 @@
     <b-message>
       <p>
         This is a tool created from need. A way for Community Advisors (CA) to
-        be assigned a proposal and to keep track of the porposal already
+        be assigned a proposal and to keep track of the proposals already
         assessed.
       </p>
     </b-message>
     <b-message>
       <p><b>How it works</b></p>
       <p>
-        The system will suggest a proposal with a low number of eligible
+        The system will suggest a proposal with a low number of
         assessments, based on the category filter that you have selected.
       </p>
       <p>
@@ -20,7 +20,7 @@
       <p>
         Using the "Mark as reviewed" button you can keep track of the proposal
         that you've already assessed. The "assessed proposals" will appear on
-        width on the bottom of the screen.
+        the bottom of the screen.
       </p>
     </b-message>
     <b-message type="is-info" has-icon>
