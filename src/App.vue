@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <div class="logo">
-      <router-link :to="{ name: 'Home' }">
-        <img src="./assets/logo.png" />
-      </router-link>
-    </div>
-    <div class="filter">
-      <c-filter :categories="categories" @filter-changed="updateFilter" />
-    </div>
-    <div class="content-wrapper">
-      <router-view/>
-    </div>
-    <div class="button" @click="suggest">
-      {{suggestText}}
+    <b-navbar class="is-primary" :mobile-burger="false">
+      <template #brand>
+        <b-navbar-item tag="router-link" :to="{ name: 'Home' }">
+          <img src="@/assets/images/catalyst.png" alt="Project Catalyst" />
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+    <div class="section container">
+      <div class="filter">
+        <c-filter :categories="categories" @filter-changed="updateFilter" />
+      </div>
+      <div class="content-wrapper">
+        <router-view/>
+      </div>
+      <div class="button" @click="suggest">
+        {{suggestText}}
+      </div>
     </div>
     <assessed :proposals="proposals" />
   </div>
@@ -76,52 +80,4 @@ export default {
 body {
   margin: 0;
 }
-#app {
-  max-width: 600px;
-  width: 100%;
-  margin: 0px auto;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  background: #f1f1f1;
-  min-height: 100vh;
-  padding: 0 30px 100px 30px;
-  @include mobile {
-    padding: 0 15px 100px 15px;
-  }
-  .logo {
-    width: 150px;
-    margin: 0px auto;
-    img {
-      width: 100%;
-    }
-  }
-  .content-wrapper {
-    padding: 0;
-  }
-}
-
-.button {
-  padding: 10px;
-  border: 2px solid #000;
-  width: 150px;
-  border-radius: 8px;
-  margin: 0px auto;
-  text-align: center;
-  font-weight: bold;
-  display: block;
-  text-decoration: none;
-  margin-bottom: 20px;
-  &, &:visited {
-    color: #000;
-  }
-  &:hover {
-    color: #fff;
-    background: #000;
-    cursor: pointer;
-  }
-
-}
-
 </style>
