@@ -1,14 +1,31 @@
 <template>
   <div class="assessed-wrapper" :class="{'open': open}">
-    <div class="header" @click="open = !open">
-      Assessed Proposals ({{assessedProposals.length}}/{{proposals.length}})
-    </div>
-    <div class="list">
+    <b-button
+      :label="headerText"
+      type="is-primary"
+      :icon-right="(open) ? 'chevron-up' : 'chevron-down'"
+      expanded
+      @click="open = !open"
+    ></b-button>
+    <div class="list content">
       <div class="proposal-preview"
         :key="proposal.id"
         v-for="proposal in assessedProposals">
-        <div class="title">{{proposal.title}}</div>
-        <a :href="proposal.url">Go</a>
+        <div class="prop-title">
+          <router-link
+            :to="{ name: 'Proposal', params: { id: proposal.id} }">
+            {{proposal.title}}
+          </router-link>
+        </div>
+        <b-button
+          tag="a"
+          size="is-small"
+          :href="proposal.url"
+          icon-left="link"
+          type="is-primary"
+          target="blank">
+          Open
+        </b-button>
       </div>
     </div>
   </div>
@@ -30,6 +47,9 @@ export default {
   computed: {
     assessedProposals() {
       return this.proposals.filter(p => (this.assessed.indexOf(p.id) > -1))
+    },
+    headerText() {
+      return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
     }
   },
   methods: {
@@ -52,8 +72,7 @@ export default {
     position: fixed;
     bottom: -2px;
     right: 20px;
-    border: 2px solid black;
-    transform: translateY(calc(100% - 38px));
+    transform: translateY(calc(100% - 40px));
     width: 500px;
     background: #fff;
     @include mobile {
@@ -62,13 +81,6 @@ export default {
     }
     &.open {
       transform: translateY(0);
-    }
-    .header {
-      padding: 10px 20px;
-      background: #000;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
     }
     .list {
       width: 100%;
@@ -81,7 +93,7 @@ export default {
         padding: 10px 20px;
         width: 100%;
         display: flex;
-        .title {
+        .prop-title {
           flex-grow: 1;
         }
         &:nth-child(2n + 1) {

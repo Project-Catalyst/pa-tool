@@ -14,11 +14,30 @@
       <div class="content-wrapper">
         <router-view/>
       </div>
-      <div class="button" @click="suggest">
-        {{suggestText}}
+      <div class="buttons is-centered">
+        <b-button
+          type="is-primary"
+          size="is-medium"
+          @click="suggest">
+          {{suggestText}}
+        </b-button>
       </div>
     </div>
     <assessed :proposals="proposals" />
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>Made by Catalyst Community for the Catalyst Community</p>
+        <b-button
+          label="Feedback"
+          type="is-primary"
+          icon-left="message-reply-text"
+          tag="a"
+          target="_blank"
+          href="https://docs.google.com/forms/d/1VVnubvpfpG-iXx3tic739o6EgcdlJOyAC9dRu1sNWTI/edit"
+          >
+        </b-button>
+      </div>
+    </footer>
   </div>
 </template>
 

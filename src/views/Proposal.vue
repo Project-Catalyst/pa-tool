@@ -1,15 +1,47 @@
 <template>
   <div class="proposal">
-    <div class="content-wrapper">
+    <div class="content box">
       <h1>{{proposal.title}}</h1>
       <h3>Problem statement</h3>
-      <div class="description">{{proposal.description}}</div>
+      <p>{{proposal.description}}</p>
+      <h3>Problem solution</h3>
+      <p>Lorem ipsum dolor sit amet{{proposal.solution}}</p>
       <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
     </div>
-    <a class="button" :href="proposal.url" target="blank">
-      Take me there
-    </a>
-    <span class="button" @click="setReviewed">{{reviewedText}}</span>
+    <div class="box">
+      <b-message type="is-warning" title="debug">
+        <b-checkbox
+          v-model="autoflag"
+        >
+          Autoflag
+        </b-checkbox>
+      </b-message>
+      <div class="buttons">
+        <b-button
+          tag="a"
+          :href="proposal.url"
+          icon-left="pencil-plus"
+          type="is-primary"
+          v-if="autoflag"
+          @click="forceReviewed"
+          target="blank">
+          Review
+        </b-button>
+        <b-button
+          tag="a"
+          :href="proposal.url"
+          icon-left="eye"
+          type="is-primary"
+          target="blank">
+          {{ ctaText }}
+        </b-button>
+        <b-checkbox
+          :value="isReviewed"
+          @input="setReviewed">
+          Proposal reviewed
+        </b-checkbox>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +54,8 @@ export default {
   data() {
     return {
       proposals: proposals,
-      assessed: []
+      assessed: [],
+      autoflag: false
     }
   },
   computed: {
@@ -42,6 +75,9 @@ export default {
     reviewedText() {
       return (this.isReviewed) ? 'Unmark as reviewed' : 'Mark as reviewed'
     },
+    ctaText() {
+      return (this.autoflag) ? 'Preview' : 'Go to proposal'
+    }
   },
   methods: {
     setReviewed() {
@@ -53,6 +89,11 @@ export default {
       }
       this.$localStorage.set('assessed', this.assessed)
       EventBus.$emit('update-assessed')
+    },
+    forceReviewed() {
+      if (!this.isReviewed) {
+        this.setReviewed()
+      }
     },
     getLs() {
       this.assessed = this.$localStorage.get('assessed')
