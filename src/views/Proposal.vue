@@ -9,13 +9,6 @@
       <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
     </div>
     <div class="box">
-      <b-message type="is-warning" title="debug">
-        <b-checkbox
-          v-model="autoflag"
-        >
-          Autoflag
-        </b-checkbox>
-      </b-message>
       <div class="buttons">
         <b-button
           tag="a"
