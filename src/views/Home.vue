@@ -11,7 +11,7 @@
       <p><b>How it works</b></p>
       <p>
         The system will suggest a proposal with a low number of
-        assessments, based on the category filter that you have selected.
+        assessments, based on the challenge filter that you have selected.
       </p>
       <p>
         Data is updated periodically from feeds from Ideascale to refresh the
