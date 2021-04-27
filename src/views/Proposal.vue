@@ -1,11 +1,12 @@
 <template>
   <div class="proposal">
     <div class="content box">
+      <h5>{{category.title}}</h5>
       <h1>{{proposal.title}}</h1>
       <h3>Problem statement</h3>
       <p>{{proposal.description}}</p>
       <h3>Problem solution</h3>
-      <p>Lorem ipsum dolor sit amet{{proposal.solution}}</p>
+      <p>{{proposal.solution}}</p>
       <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
     </div>
     <div class="box">
@@ -40,12 +41,14 @@
 
 
 <script>
+import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
 import { EventBus } from './../EventBus';
 
 export default {
   data() {
     return {
+      categories: categories,
       proposals: proposals,
       assessed: [],
       autoflag: false
@@ -58,6 +61,15 @@ export default {
         return filtered[0]
       }
       return filtered
+    },
+    category() {
+      if (this.proposal) {
+        let category = this.categories.filter(c => (c.id === parseInt(this.proposal.category)))
+        if (category.length) {
+          return category[0]
+        }
+      }
+      return ''
     },
     isReviewed() {
       if (this.proposal && this.assessed) {
