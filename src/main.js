@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Buefy from "buefy";
 import App from './App.vue'
 import router from './router'
+import './plugins/axios'
 import './plugins/multiselect';
 import './plugins/localstorage';
 

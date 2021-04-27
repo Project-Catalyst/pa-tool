@@ -53,7 +53,8 @@ export default {
       categories: categories,
       proposals: proposals,
       currentFilter: [],
-      currentIndex: 0
+      currentIndex: 0,
+      interval: false
     }
   },
   components: {
@@ -69,8 +70,23 @@ export default {
       }
     },
     suggest() {
-      this.$router.push({ name: 'Proposal', params:{ id: this.filteredProposals[this.currentIndex].id }})
-      this.currentIndex = this.currentIndex + 1
+      if (this.filteredProposals[this.currentIndex]) {
+        this.$router.push({ name: 'Proposal', params:{ id: this.filteredProposals[this.currentIndex].id }})
+        this.currentIndex = this.currentIndex + 1
+      } else {
+        this.currentIndex = 0
+      }
+    },
+    remoteUpdate() {
+      this.axios.get('proposals.json').then((res) => {
+        let remoteProposals = res.data
+        remoteProposals.forEach((r) => {
+          let selected = this.proposals.find((p) => p.id === r.id)
+          if (selected) {
+            selected.no_assessments = r.assessments_count
+          }
+        })
+      })
     }
   },
   computed: {
@@ -87,6 +103,13 @@ export default {
     }
   },
   mounted() {
+    this.remoteUpdate()
+    this.interval = setInterval(() => {
+      this.remoteUpdate()
+    }, 15 * 60 * 1000)
+  },
+  beforeDestroy() {
+    clearInterval(this.interval)
   }
 }
 </script>
