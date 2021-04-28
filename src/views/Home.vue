@@ -22,6 +22,11 @@
         that you've already assessed. The "assessed proposals" will appear on
         the bottom of the screen.
       </p>
+      <p>
+        <strong>Disclaimer</strong>: the data about the assessment count is
+        <strong>not updated</strong> in real time and therefore is likely 
+        different from those shown in IdeaScale.
+      </p>
     </b-message>
     <b-message type="is-info" has-icon>
       <p><b>Useful links for Community Advisors</b></p>
