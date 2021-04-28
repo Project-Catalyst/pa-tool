@@ -96,7 +96,11 @@ export default {
         let filters = this.currentFilter.map(el => el.id)
         proposals = this.proposals.filter(p => filters.indexOf(p.category) > -1)
       }
-      return proposals.sort((a,b) => (a.no_assessments > b.no_assessments) ? 1 : ((b.no_assessments > a.no_assessments) ? -1 : 0))
+      return proposals
+        .sort(() => (Math.random() > .5) ? 1 : -1)
+        .sort(
+          (a,b) => (a.no_assessments > b.no_assessments) ? 1 : ((b.no_assessments > a.no_assessments) ? -1 : 0)
+        )
     },
     suggestText() {
       return (this.$route.name === 'Home') ? 'Suggest Proposal' : 'Give me another'
