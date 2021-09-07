@@ -1,12 +1,27 @@
 <template>
   <div class="proposal">
     <div class="content box">
-      <h5>{{category.title}}</h5>
+      <div class="is-flex is-align-items-center">
+        <h5 class="mr-5 mb-0">{{category.title}}</h5>
+        <b-button type="is-primary" size="is-small" @click="briefActive = true">Open challenge brief</b-button>
+      </div>
       <h1>{{proposal.title}}</h1>
-      <h3>Problem statement</h3>
-      <p>{{proposal.description}}</p>
-      <h3>Problem solution</h3>
-      <p>{{proposal.solution}}</p>
+      <div class="mb-4">
+        <h3 class="mb-1">Problem statement</h3>
+        <p>{{proposal.description}}</p>
+      </div>
+      <div class="mb-4" v-if="proposal.relevant_experience">
+        <h3 class="mb-1">Relevant experience</h3>
+        <p>{{proposal.relevant_experience}}</p>
+      </div>
+      <div class="mb-4" v-if="proposal.problem_solution">
+        <h3 class="mb-1">Problem solution</h3>
+        <p>{{proposal.problem_solution}}</p>
+      </div>
+      <div class="mb-4" v-if="proposal.importance">
+        <h3 class="mb-1">Importance</h3>
+        <p>{{proposal.importance}}</p>
+      </div>
       <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
     </div>
     <div class="box">
@@ -31,11 +46,35 @@
         </b-button>
         <b-checkbox
           :value="isReviewed"
-          @input="setReviewed">
+          @click.native.prevent="setReviewed">
           Proposal reviewed
         </b-checkbox>
       </div>
     </div>
+    <b-modal
+      v-model="briefActive"
+      has-modal-card
+      trap-focus
+      :destroy-on-hide="false"
+      aria-role="dialog"
+      aria-label="Challenge Brief"
+      aria-modal>
+      <template #default="props">
+        <challenge-brief v-bind="{challenge: category}" @close="props.close" />
+      </template>
+  </b-modal>
+    <b-modal
+      v-model="modalActive"
+      has-modal-card
+      trap-focus
+      :destroy-on-hide="false"
+      aria-role="dialog"
+      aria-label="Self Checklist"
+      aria-modal>
+      <template #default="props">
+        <checklist v-bind="{challenge: category, proposal: proposal}" @assessed="confirmAssessed" @close="props.close" />
+      </template>
+    </b-modal>
   </div>
 </template>
 
@@ -44,6 +83,9 @@
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
 import { EventBus } from './../EventBus';
+import Checklist from '@/components/Checklist'
+import ChallengeBrief from '@/components/ChallengeBrief'
+
 
 export default {
   data() {
@@ -51,8 +93,14 @@ export default {
       categories: categories,
       proposals: proposals,
       assessed: [],
-      autoflag: false
+      autoflag: false,
+      modalActive: false,
+      briefActive: false
     }
+  },
+  components: {
+    Checklist,
+    ChallengeBrief
   },
   computed: {
     proposal() {
@@ -87,10 +135,20 @@ export default {
   methods: {
     setReviewed() {
       if (!this.isReviewed) {
-        this.assessed.push(this.proposal.id)
+        this.modalActive = true
       } else {
         let index = this.assessed.indexOf(this.proposal.id)
         this.assessed.splice(index, 1)
+        this.$localStorage.set('assessed', this.assessed)
+        EventBus.$emit('update-assessed')
+      }
+    },
+    confirmAssessed(res) {
+      if (res && !this.isReviewed) {
+        this.assessed.push(this.proposal.id)
+      } else if (!res) {
+        console.log('a')
+        this.getLs()
       }
       this.$localStorage.set('assessed', this.assessed)
       EventBus.$emit('update-assessed')
@@ -112,6 +170,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .description {
   margin-bottom: 40px;
 }

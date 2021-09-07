@@ -1,24 +1,26 @@
 <template>
   <div class="filter-wrapper mb-5">
-    <b-field label="Filter proposals by challenge">
-      <multiselect
-        v-model="selected"
-        :options="categories"
-        :searchable="false"
-        :multiple="true"
-        label="title"
-        track-by="id">
-        <template slot="tag"  slot-scope="props">
-          <b-tag
-            type="is-primary"
-            closable
-            aria-close-label="Close tag"
-            @close="props.remove(props.option)">
-            {{ props.option.title }}
-          </b-tag>
-        </template>
-      </multiselect>
-    </b-field>
+    <label class="mb-2 is-flex is-flex-wrap-wrap">
+      <span class="has-text-weight-bold mr-3">Filter proposals by challenge:</span>
+      <b-button type="is-primary" size="is-small" @click="clearFilter()">Clear filters</b-button>
+    </label>
+    <multiselect
+      v-model="selected"
+      :options="categories"
+      :searchable="false"
+      :multiple="true"
+      label="title"
+      track-by="id">
+      <template slot="tag"  slot-scope="props">
+        <b-tag
+          type="is-primary"
+          closable
+          aria-close-label="Close tag"
+          @close="props.remove(props.option)">
+          {{ props.option.title }}
+        </b-tag>
+      </template>
+    </multiselect>
   </div>
 </template>
 
@@ -40,6 +42,11 @@ export default {
   watch: {
     selected(newVal) {
       this.$emit('filter-changed', newVal)
+    }
+  },
+  methods: {
+    clearFilter() {
+      this.selected = []
     }
   },
   mounted() {
