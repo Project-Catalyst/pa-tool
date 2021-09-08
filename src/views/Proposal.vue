@@ -82,6 +82,7 @@
 <script>
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
+import questions from '../assets/data/questions.json'
 import { EventBus } from './../EventBus';
 import Checklist from '@/components/Checklist'
 import ChallengeBrief from '@/components/ChallengeBrief'
@@ -92,6 +93,7 @@ export default {
     return {
       categories: categories,
       proposals: proposals,
+      questions: questions,
       assessed: [],
       autoflag: false,
       modalActive: false,
@@ -119,6 +121,23 @@ export default {
       }
       return ''
     },
+    activeQuestions() {
+      return this.questions.filter((group) => {
+        if (this.category) {
+          if (group.challenges.indexOf(this.category.id) > -1) {
+            return true
+          }
+        }
+        return false
+      })
+    },
+    questionsNumber() {
+      let tot = 0
+      this.activeQuestions.forEach((group) => {
+        tot = tot + group.questions.length
+      })
+      return tot
+    },
     isReviewed() {
       if (this.proposal && this.assessed) {
         return (this.assessed.indexOf(this.proposal.id) > -1)
@@ -135,7 +154,11 @@ export default {
   methods: {
     setReviewed() {
       if (!this.isReviewed) {
-        this.modalActive = true
+        if (this.questionsNumber > 0) {
+          this.modalActive = true
+        } else {
+          this.confirmAssessed(true)
+        }
       } else {
         let index = this.assessed.indexOf(this.proposal.id)
         this.assessed.splice(index, 1)
@@ -147,7 +170,6 @@ export default {
       if (res && !this.isReviewed) {
         this.assessed.push(this.proposal.id)
       } else if (!res) {
-        console.log('a')
         this.getLs()
       }
       this.$localStorage.set('assessed', this.assessed)
