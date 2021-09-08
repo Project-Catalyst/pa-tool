@@ -6,6 +6,14 @@
           <img src="@/assets/images/catalyst.png" alt="Project Catalyst" />
         </b-navbar-item>
       </template>
+      <template #end>
+        <b-navbar-item tag="a" target="_blank" href="https://www.youtube.com/watch?v=bXLwUHmCyzA">
+          Tutorial for CAs
+        </b-navbar-item>
+        <b-navbar-item tag="a" target="_blank" href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit#">
+          Assessment Guide
+        </b-navbar-item>
+      </template>
     </b-navbar>
     <div class="section container">
       <div class="filter">
@@ -27,6 +35,7 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>Made by Catalyst Community for the Catalyst Community</p>
+        <p><img class="aim-logo" src="@/assets/images/aim-logo.png" alt="Cardano AIM" /></p>
         <b-button
           label="Feedback"
           type="is-primary"
@@ -125,5 +134,8 @@ export default {
 }
 body {
   margin: 0;
+}
+.aim-logo {
+  width: 150px;
 }
 </style>
