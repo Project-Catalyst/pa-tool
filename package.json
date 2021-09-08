@@ -12,7 +12,7 @@
     "buefy": "^0.9.7",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-axios": "^3.2.4",
+    "vue-axios": "^2.1.4",
     "vue-localstorage": "^0.6.2",
     "vue-multiselect": "^2.1.6",
     "vue-router": "^3.2.0",
@@ -26,8 +26,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
