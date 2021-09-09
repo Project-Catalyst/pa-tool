@@ -7,20 +7,25 @@
       </div>
       <h1>{{proposal.title}}</h1>
       <div class="mb-4">
-        <h3 class="mb-1">Problem statement</h3>
+        <h4 class="mb-1" v-if="!isChallengeSetting">Problem statement</h4>
+        <h4 class="mb-1" v-if="isChallengeSetting">Challenge question</h4>
         <p>{{proposal.description}}</p>
       </div>
-      <div class="mb-4" v-if="proposal.relevant_experience">
-        <h3 class="mb-1">Relevant experience</h3>
-        <p>{{proposal.relevant_experience}}</p>
-      </div>
       <div class="mb-4" v-if="proposal.problem_solution">
-        <h3 class="mb-1">Problem solution</h3>
+        <h4 class="mb-1">Problem solution</h4>
         <p>{{proposal.problem_solution}}</p>
       </div>
+      <div class="mb-4" v-if="proposal.relevant_experience">
+        <h4 class="mb-1">Relevant experience</h4>
+        <p>{{proposal.relevant_experience}}</p>
+      </div>
       <div class="mb-4" v-if="proposal.importance">
-        <h3 class="mb-1">Importance</h3>
+        <h4 class="mb-1">Why is it important?</h4>
         <p>{{proposal.importance}}</p>
+      </div>
+      <div class="mb-4" v-if="proposal.importance">
+        <h4 class="mb-1">How does success look like?</h4>
+        <p>{{proposal.how_does_success_look_like_}}</p>
       </div>
       <div>No assessments: <b>{{proposal.no_assessments}}</b></div>
     </div>
@@ -149,6 +154,14 @@ export default {
     },
     ctaText() {
       return (this.autoflag) ? 'Preview' : 'Go to proposal'
+    },
+    isChallengeSetting() {
+      if (this.category) {
+        if (this.category.id === 26120) {
+          return true
+        }
+      }
+      return false
     }
   },
   methods: {
