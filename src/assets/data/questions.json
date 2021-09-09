@@ -1,33 +1,14 @@
 [
   {
-    "criterium": "Impact",
+    "criterium": "Have you checked that:",
     "questions": [
-      "Have you described if the proposal is in line with the challenge and why?",
-      "Did you take a look at the problem statement?"
-    ],
-    "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119]
-  },
-  {
-    "criterium": "Feasibility",
-    "questions": [
-      "Lorem ipsum dolor sit amet a generic question 1?",
-      "Lorem ipsum dolor sit amet a generic question 2?"
-    ],
-    "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119]
-  },
-  {
-    "criterium": "Auditability",
-    "questions": [
-      "Lorem ipsum dolor sit amet a generic question 3?",
-      "Lorem ipsum dolor sit amet a generic question 4?"
-    ],
-    "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119]
-  },
-  {
-    "criterium": "General",
-    "questions": [
-      "Lorem ipsum dolor sit amet a generic question 5?",
-      "Lorem ipsum dolor sit amet a generic question 6?"
+      "the problem statement defines a problem within the challenge?",
+      "the proposal has a positive impact on the Cardano ecosystem?",
+      "the proposer's team has relevant experience and/or references?",
+      "there is a detailed implementable plan?",
+      "the budget is understandable and reasonable?",
+      "metrics / KPIs are presented and make sense?",
+      "the community can track the progress of the proposal?"
     ],
     "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119]
   }

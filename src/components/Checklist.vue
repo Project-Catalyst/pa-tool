@@ -2,11 +2,11 @@
   <div class="checklist-wrapper">
     <div class="modal-card" style="width: auto">
       <header class="modal-card-head">
-        <p class="modal-card-title">Self assessment</p>
+        <p class="modal-card-title">Self-evaluation</p>
       </header>
       <section class="modal-card-body">
         <b-message  type="is-info" class="is-size-6">
-          This self-assessment is designed to help you provide better quality assessments and feedback on the proposal. It is not mandatory but is an indication of how well you've applied the guidelines to your assessment.
+          This checklist is designed to help you provide better quality assessments and feedback to the proposer. It is not mandatory, however using it can help give you an indication of how well you've applied the guidelines to your assessment.
         </b-message>
         <div class="form-group mb-3" v-for="group,idx in activeQuestions" :key="`g-${idx}`">
           <h3 class="mb-2 has-text-weight-bold">{{group.criterium}}</h3>
@@ -17,7 +17,7 @@
           </div>
         </div>
       </section>
-      <footer class="modal-card-foot">
+      <footer class="modal-card-foot is-justify-content-flex-end">
         <b-button
             label="Cancel"
             @click="setAssessed(false)" />
@@ -69,7 +69,8 @@ export default {
       return tot
     },
     disabled() {
-      return ((this.selected.length / this.totNumber) < 0.33)
+      return false
+      // return ((this.selected.length / this.totNumber) < 0.33)
     }
   },
   mounted() {
