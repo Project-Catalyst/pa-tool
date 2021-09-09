@@ -6,8 +6,6 @@
         be assigned a proposal and to keep track of the proposals already
         assessed.
       </p>
-    </b-message>
-    <b-message>
       <p><b>How it works</b></p>
       <p>
         The system will suggest a proposal with a low number of
@@ -33,7 +31,7 @@
       <p>
         Please read the <a href="https://docs.google.com/document/d/16aq9dNudJ5S3TEVQhBgRznTCoaF8SQezyActtVhec8E" target="_blank">onboarding document</a><br />
         Read the <a href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit" target="_blank">Community Advisor Assessment Guide</a><br />
-        Watch the <a href="https://www.youtube.com/watch?v=bXLwUHmCyzA" target="_blank">the Tutorial for Community Advisors by The Catalyst School</a><br />
+        Watch the <a href="https://vimeo.com/600295406" target="_blank">the Tutorial for Community Advisors</a><br />
         Join the <a href="https://t.me/CatalystCommunityAdvisors" target="_blank">community advisor TG support channel</a>
       </p>
     </b-message>
