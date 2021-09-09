@@ -2,7 +2,7 @@
   <div class="checklist-wrapper">
     <div class="modal-card" style="width: auto">
       <header class="modal-card-head">
-        <p class="modal-card-title">Challenge brief</p>
+        <p class="modal-card-title"><span v-if="challenge">{{challenge.title}} - </span>Challenge brief</p>
       </header>
       <section class="modal-card-body markdown">
         <vue-simple-markdown :source="text" />
