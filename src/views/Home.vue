@@ -1,22 +1,22 @@
 <template>
   <div class="home">
     <b-message>
-      <p>
+      <p class="mb-1">
         This is a tool created from need. A way for Community Advisors (CA) to
         be assigned a proposal and to keep track of the proposals already
         assessed.
       </p>
       <p><b>How it works</b></p>
       <p>
-        The system will suggest a proposal with a low number of
+        <b>By clicking the button "Suggest Proposal"</b> below, the system will suggest a proposal with a low number of
         assessments, based on the challenge filter that you have selected.
       </p>
       <p>
         Data is updated periodically from feeds from Ideascale to refresh the
         list.
       </p>
-      <p>
-        Using the "Mark as reviewed" button you can keep track of the proposal
+      <p class="mb-1">
+        Using the "Proposal reviewed" checkbox you can keep track of the proposal
         that you've already assessed. The "assessed proposals" will appear on
         the bottom of the screen.
       </p>

@@ -31,7 +31,7 @@
       <div class="buttons is-centered">
         <b-button
           type="is-primary"
-          size="is-medium"
+          size="is-large"
           v-if="this.filteredProposals.length > 0"
           @click="suggest">
           {{suggestText}}
