@@ -21,7 +21,15 @@
         </b-tag>
       </template>
     </multiselect>
-  </div>
+    <b-field class="mt-3" label="Filter by title">
+      <b-input placeholder="Search for (min 3 char)..."
+        type="search"
+        icon="magnify"
+        icon-clickable
+        v-model="keyword">
+      </b-input>
+    </b-field>
+</div>
 </template>
 
 
@@ -36,17 +44,22 @@ export default {
   components: { Multiselect },
   data() {
     return {
+      keyword: '',
       selected: null
     }
   },
   watch: {
     selected(newVal) {
       this.$emit('filter-changed', newVal)
+    },
+    keyword(newVal) {
+      this.$emit('keyword-changed', newVal)
     }
   },
   methods: {
     clearFilter() {
       this.selected = []
+      this.keyword = ''
     }
   },
   mounted() {
