@@ -1,0 +1,83 @@
+<template>
+  <div class="countdown">
+    <div class="modal-card" style="width: auto">
+      <div class="modal-card-body has-text-centered">
+        <div class="title mb-6">Project Catalyst Fund7 Assess Stage<br />has not started yet!</div>
+        <div class="counter-box mb-6" v-if="secsToRegistration > 0">
+          <span class="is-size-4 has-text-weight-bold">Community Advisors registrations starts in: </span>
+          <counter :d="toReg.d" :h="toReg.h" :m="toReg.m" :s="toReg.s" />
+          <span class="is-size-4 has-text-weight-bold">{{ fRegistrationsStart }} UTC</span>
+        </div>
+        <div class="counter-box" v-if="secsToRegistration > 0">
+          <span class="is-size-4 has-text-weight-bold">Assess Stage starts in: </span>
+          <counter :d="toAssess.d" :h="toAssess.h" :m="toAssess.m" :s="toAssess.s" />
+          <span class="is-size-4 has-text-weight-bold">{{ fAssessStart }} UTC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+
+import moment from 'moment'
+import Counter from '@/components/Counter'
+
+export default {
+  name: 'Countdown',
+  components: {
+    Counter
+  },
+  data() {
+    return {
+      registrationStartsUTC: moment.utc('2021-12-02 11:00:00'),
+      assessStartsUTC: moment.utc('2021-12-09 11:00:00'),
+      now: 0,
+    }
+  },
+  methods: {
+    getNow() {
+      this.now = moment().utc().unix()
+    },
+    getDuration(time) {
+      let duration = moment.duration(time, "seconds")
+      return {
+        d: duration.days(),
+        h: duration.hours(),
+        m: duration.minutes(),
+        s: duration.seconds()
+      }
+    }
+  },
+  computed: {
+    secsToRegistration() {
+      return this.registrationStartsUTC.unix() - this.now
+    },
+    secsToAssess() {
+      return this.assessStartsUTC.unix() - this.now
+    },
+    toReg() {
+      return this.getDuration(this.secsToRegistration)
+    },
+    toAssess() {
+      return this.getDuration(this.secsToAssess)
+    },
+    fRegistrationsStart() {
+      return this.registrationStartsUTC.format('DD MMM YYYY HH:mm')
+    },
+    fAssessStart() {
+      return this.assessStartsUTC.format('DD MMM YYYY HH:mm')
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.getNow()
+    }, 1000)
+  }
+}
+</script>
+<style lang="scss">
+.countdown {
+}
+</style>

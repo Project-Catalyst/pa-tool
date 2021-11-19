@@ -61,6 +61,12 @@
         </b-button>
       </div>
     </footer>
+    <b-modal
+      v-model="notActive"
+      has-modal-card
+      :can-cancel="false">
+      <landing />
+    </b-modal>
   </div>
 </template>
 
@@ -69,6 +75,7 @@ import categories from './assets/data/categories.json'
 import proposals from './assets/data/proposals.json'
 import CFilter from '@/components/Filter'
 import Assessed from '@/components/Assessed'
+import Landing from '@/views/Landing'
 
 export default {
   data() {
@@ -78,12 +85,14 @@ export default {
       currentFilter: [],
       currentIndex: 0,
       currentKeyword: '',
-      interval: false
+      interval: false,
+      notActive: true
     }
   },
   components: {
     CFilter,
-    Assessed
+    Assessed,
+    Landing
   },
   methods: {
     updateKeyword(newVal) {
