@@ -1,6 +1,6 @@
 <template>
   <div class="suggest">
-    <div class="buttons is-centered">
+    <div class="buttons is-centered" v-if="filteredProposals">
       <b-button
         type="is-primary"
         size="is-large"
@@ -26,18 +26,16 @@ export default {
   mixins: [DataMixin],
   methods: {
     suggest() {
-      if (this.filteredProposals[this.currentIndex]) {
-        this.$router.push({ name: 'Proposal', params:{ id: this.filteredProposals[this.currentIndex].id }})
-        this.$store.commit('filters/setCurrentIndex', this.currentIndex + 1)
-      } else {
-        this.$store.commit('filters/setCurrentIndex', 0)
-      }
+      this.$store.dispatch('filters/getNext')
     },
   },
   computed: {
     suggestText() {
       return (this.$route.name === 'Home') ? 'Suggest Proposal' : 'Give me another'
     }
+  },
+  mounted() {
+    console.log(this)
   }
 }
 
