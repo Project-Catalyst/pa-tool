@@ -3,6 +3,7 @@ import Buefy from "buefy";
 import VueSimpleMarkdown from 'vue-simple-markdown'
 import App from './App.vue'
 import router from './router'
+import store from "./store";
 import './plugins/axios'
 import './plugins/multiselect';
 import './plugins/localstorage';
@@ -17,6 +18,7 @@ Vue.use(VueSimpleMarkdown)
 
 new Vue({
   router,
+  store,
   render: h => h(App),
   localStorage: {
     assessed: {

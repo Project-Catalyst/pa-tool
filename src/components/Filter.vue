@@ -4,23 +4,23 @@
       <span class="has-text-weight-bold mr-3">Filter proposals by challenge:</span>
       <b-button type="is-primary" size="is-small" @click="clearFilter()">Clear filters</b-button>
     </label>
-    <multiselect
-      v-model="selected"
-      :options="categories"
-      :searchable="false"
-      :multiple="true"
-      label="title"
-      track-by="id">
-      <template slot="tag"  slot-scope="props">
-        <b-tag
-          type="is-primary"
-          closable
-          aria-close-label="Close tag"
-          @close="props.remove(props.option)">
-          {{ props.option.title }}
-        </b-tag>
-      </template>
-    </multiselect>
+    <b-taginput
+        ref="tagInput"
+        :value="selectedChallenges"
+        :data="filteredChallenges"
+        icon="label"
+        field="title"
+        autocomplete
+        :open-on-focus="true"
+        placeholder="Select a challenge"
+        max-height="450px"
+        @add="selectChallenge"
+        @remove="unselectChallenge"
+        @typing="getFilteredChallenges">
+        <template #empty>
+            There are no items
+        </template>
+    </b-taginput>
     <b-field class="mt-3" label="Filter by title">
       <b-input placeholder="Search for (min 3 char)..."
         type="search"
@@ -36,34 +36,58 @@
 
 <script>
 
-import Multiselect from 'vue-multiselect'
+import { mapState } from "vuex";
 
 export default {
   name: 'CFilter',
   props: ['categories'],
-  components: { Multiselect },
   data() {
     return {
-      keyword: '',
-      selected: null
+      filteredChallenges: []
+    }
+  },
+  computed: {
+    ...mapState({
+      selectedChallenges: (state) => state.filters.selectedChallenges,
+    }),
+    keyword: {
+      get() {
+        return this.$store.state.filters.keyword
+      },
+      set(value) {
+        this.$store.commit('filters/setKeyword', value)
+      }
     }
   },
   watch: {
-    selected(newVal) {
-      this.$emit('filter-changed', newVal)
-    },
-    keyword(newVal) {
-      this.$emit('keyword-changed', newVal)
-    }
   },
   methods: {
+    selectChallenge(challenge) {
+      this.$store.commit('filters/addChallenge', challenge)
+    },
+    unselectChallenge(challenge) {
+      this.$store.commit('filters/removeChallenge', challenge)
+    },
     clearFilter() {
-      this.selected = []
-      this.keyword = ''
+      this.$store.commit('filters/resetState')
+    },
+    getFilteredChallenges(text) {
+      let filteredChallenges
+      if (text) {
+        filteredChallenges = this.categories.filter((option) => {
+          return option.title
+              .toString()
+              .toLowerCase()
+              .indexOf(text.toLowerCase()) >= 0
+        })
+      } else {
+        filteredChallenges = this.categories
+      }
+      this.filteredChallenges = filteredChallenges
     }
   },
   mounted() {
-    this.selected = this.categories
+    this.getFilteredChallenges()
   }
 }
 </script>

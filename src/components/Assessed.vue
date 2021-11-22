@@ -34,12 +34,13 @@
 <script>
 
 import { EventBus } from './../EventBus';
+import proposals from '@/assets/data/proposals.json'
 
 export default {
   name: 'Assessed',
-  props: ['proposals'],
   data() {
     return {
+      proposals: proposals,
       assessed: [],
       open: false
     }

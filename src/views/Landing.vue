@@ -1,21 +1,23 @@
 <template>
-  <div class="countdown">
-    <div class="modal-card" style="width: auto">
-      <div class="modal-card-body has-text-centered">
-        <div class="title mb-6">Project Catalyst Fund7 Assess Stage<br />has not started yet!</div>
-        <div class="counter-box mb-6" v-if="secsToRegistration > 0">
-          <span class="is-size-4 has-text-weight-bold">Community Advisors registrations starts in: </span>
-          <counter :d="toReg.d" :h="toReg.h" :m="toReg.m" :s="toReg.s" />
-          <span class="is-size-4 has-text-weight-bold">{{ fRegistrationsStart }} UTC</span>
-        </div>
-        <div class="counter-box" v-if="secsToRegistration > 0">
-          <span class="is-size-4 has-text-weight-bold">Assess Stage starts in: </span>
-          <counter :d="toAssess.d" :h="toAssess.h" :m="toAssess.m" :s="toAssess.s" />
-          <span class="is-size-4 has-text-weight-bold">{{ fAssessStart }} UTC</span>
+  <b-modal v-model="isModalActive" has-modal-card :can-cancel="false">
+    <div class="countdown">
+      <div class="modal-card" style="width: auto">
+        <div class="modal-card-body has-text-centered">
+          <div class="title mb-6">Project Catalyst Fund7 Assess Stage<br />has not started yet!</div>
+          <div class="counter-box mb-6" v-if="secsToRegistration > 0">
+            <span class="is-size-4 has-text-weight-bold">Community Advisors registrations starts in: </span>
+            <counter :d="toReg.d" :h="toReg.h" :m="toReg.m" :s="toReg.s" />
+            <span class="is-size-4 has-text-weight-bold">{{ fRegistrationsStart }} UTC</span>
+          </div>
+          <div class="counter-box" v-if="secsToRegistration > 0">
+            <span class="is-size-4 has-text-weight-bold">Assess Stage starts in: </span>
+            <counter :d="toAssess.d" :h="toAssess.h" :m="toAssess.m" :s="toAssess.s" />
+            <span class="is-size-4 has-text-weight-bold">{{ fAssessStart }} UTC</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </b-modal>
 </template>
 
 <script>
@@ -51,6 +53,10 @@ export default {
     }
   },
   computed: {
+    isModalActive() {
+      return false
+      // return (this.secsToAssess > 0)
+    },
     secsToRegistration() {
       return this.registrationStartsUTC.unix() - this.now
     },

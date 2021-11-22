@@ -1,5 +1,6 @@
 <template>
   <div class="proposal">
+    <c-filter :categories="categories" />
     <div class="content box">
       <div class="is-flex is-align-items-center">
         <h5 class="mr-5 mb-0">{{category.title}}</h5>
@@ -89,6 +90,7 @@ import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
 import questions from '../assets/data/questions.json'
 import { EventBus } from './../EventBus';
+import CFilter from '@/components/Filter'
 import Checklist from '@/components/Checklist'
 import ChallengeBrief from '@/components/ChallengeBrief'
 
@@ -107,7 +109,8 @@ export default {
   },
   components: {
     Checklist,
-    ChallengeBrief
+    ChallengeBrief,
+    CFilter
   },
   computed: {
     proposal() {
