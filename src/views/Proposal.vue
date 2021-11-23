@@ -50,13 +50,16 @@
           target="blank">
           {{ ctaText }}
         </b-button>
+        <!--
         <b-checkbox
           :value="isReviewed"
           @click.native.prevent="setReviewed">
           Proposal reviewed
         </b-checkbox>
+        -->
       </div>
     </div>
+    <assessment :proposal="proposal" />
     <b-modal
       v-model="briefActive"
       has-modal-card
@@ -68,18 +71,6 @@
       <template #default="props">
         <challenge-brief v-bind="{challenge: category}" @close="props.close" />
       </template>
-  </b-modal>
-    <b-modal
-      v-model="modalActive"
-      has-modal-card
-      trap-focus
-      :destroy-on-hide="false"
-      aria-role="dialog"
-      aria-label="Self Checklist"
-      aria-modal>
-      <template #default="props">
-        <checklist v-bind="{challenge: category, proposal: proposal}" @assessed="confirmAssessed" @close="props.close" />
-      </template>
     </b-modal>
   </div>
 </template>
@@ -88,10 +79,9 @@
 <script>
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
-import questions from '../assets/data/questions.json'
 import { EventBus } from './../EventBus';
 import CFilter from '@/components/Filter'
-import Checklist from '@/components/Checklist'
+import Assessment from '@/components/Assessment'
 import ChallengeBrief from '@/components/ChallengeBrief'
 
 
@@ -100,7 +90,6 @@ export default {
     return {
       categories: categories,
       proposals: proposals,
-      questions: questions,
       assessed: [],
       autoflag: false,
       modalActive: false,
@@ -108,9 +97,9 @@ export default {
     }
   },
   components: {
-    Checklist,
     ChallengeBrief,
-    CFilter
+    CFilter,
+    Assessment
   },
   computed: {
     proposal() {
