@@ -28,7 +28,12 @@
         <h4 class="mb-1">How does success look like? (max 140 char)</h4>
         <p>{{proposal.how_does_success_look_like_}}</p>
       </div>
-      <div>No. assessments: <b>{{proposal.no_assessments}}</b></div>
+      <div>
+        No. assessments: <b>{{proposal.no_assessments}}</b><br />
+        <span class="is-size-7" v-if="lastUpdate">
+          Last update: {{fLastUpdateDuration}} [{{ fLastUpdate }}]
+        </span>
+      </div>
     </div>
     <div class="box">
       <div class="buttons">
@@ -77,6 +82,8 @@
 
 
 <script>
+import moment from 'moment'
+import { mapState } from "vuex";
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
 import { EventBus } from './../EventBus';
@@ -102,6 +109,9 @@ export default {
     Assessment
   },
   computed: {
+    ...mapState({
+      lastUpdate: (state) => state.filters.lastUpdate
+    }),
     proposal() {
       let filtered = this.proposals.filter(p => (p.id === parseInt(this.$route.params.id)))
       if (filtered.length) {
@@ -154,6 +164,15 @@ export default {
         }
       }
       return false
+    },
+    fLastUpdateDuration() {
+      let now = moment().utc().unix()
+      let last = moment(this.lastUpdate).utc().unix()
+      let diff = last - now
+      return moment.duration(diff, "seconds").humanize(true)
+    },
+    fLastUpdate() {
+      return moment(this.lastUpdate).format('DD MMM YYYY HH:mm')
     }
   },
   methods: {

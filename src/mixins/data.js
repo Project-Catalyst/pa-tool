@@ -24,6 +24,7 @@ var proposalsData = {
   methods: {
     remoteUpdate() {
       this.$store.dispatch("filters/getAssessmentsCount");
+      this.$store.dispatch("filters/getLastUpdate")
     }
   },
   mounted() {

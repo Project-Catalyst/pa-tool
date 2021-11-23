@@ -10,7 +10,8 @@ const getDefaultState = () => ({
   currentIndex: 0,
   keyword: '',
   selectedChallenges: [allChallenge],
-  proposals: staticProposals
+  proposals: staticProposals,
+  lastUpdate: false
 })
 const state = getDefaultState()
 
@@ -58,6 +59,17 @@ const actions = {
       }
     })
   },
+  getLastUpdate ({ commit }) {
+    let lastCommitUrl = `${process.env.VUE_APP_GITHUB_API_BACKEND_URL}commits?per_page=1`
+    this._vm.$http.get(lastCommitUrl).then((res) => {
+      if (res.data) {
+        if (res.data.length > 0) {
+          const lastCommitDate = res.data[0].commit.author.date
+          commit('setLastUpdate', lastCommitDate)
+        }
+      }
+    })
+  },
   getNext({ commit, state, getters }) {
     let fProposals = getters.filteredProposals
     if (fProposals[state.currentIndex]) {
@@ -78,6 +90,9 @@ const actions = {
 
 // mutations
 const mutations = {
+  setLastUpdate (state, lastUpdate) {
+    state.lastUpdate = lastUpdate
+  },
   setProposals (state, proposals) {
     state.proposals = proposals
   },
