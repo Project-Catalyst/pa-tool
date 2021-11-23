@@ -83,7 +83,10 @@ export default {
       } else {
         filteredChallenges = this.categories
       }
-      this.filteredChallenges = filteredChallenges
+      this.filteredChallenges = [{
+        title: "All",
+        id: 0
+      }, ...filteredChallenges]
     }
   },
   mounted() {

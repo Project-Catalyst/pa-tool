@@ -1,10 +1,15 @@
 import router from '@/router'
 import staticProposals from '@/assets/data/proposals.json'
+
+const allChallenge = {
+  title: "All",
+  id: 0
+}
 // initial state
 const getDefaultState = () => ({
   currentIndex: 0,
   keyword: '',
-  selectedChallenges: [],
+  selectedChallenges: [allChallenge],
   proposals: staticProposals
 })
 const state = getDefaultState()
@@ -12,17 +17,19 @@ const state = getDefaultState()
 // getters
 const getters = {
   filteredProposals: state => {
-    let proposals = staticProposals
+    let lproposals = JSON.parse(JSON.stringify(staticProposals))
     if (state.selectedChallenges.length > 0) {
       let filters = state.selectedChallenges.map(el => el.id)
-      proposals = proposals.filter(p => filters.indexOf(p.category) > -1)
+      if (filters.indexOf(0) === -1) {
+        lproposals = lproposals.filter(p => filters.indexOf(p.category) > -1)
+      }
     }
     if (state.keyword.trim().length >= 3) {
-      proposals = proposals.filter(
+      lproposals = lproposals.filter(
         (el) => el.title.toLowerCase().includes(state.keyword.toLowerCase())
       )
     }
-    return proposals
+    return lproposals
       .sort(() => (Math.random() > .5) ? 1 : -1)
       .sort(
         (a,b) => (a.no_assessments > b.no_assessments) ? 1 : ((b.no_assessments > a.no_assessments) ? -1 : 0)
@@ -74,7 +81,15 @@ const mutations = {
     state.currentIndex = 0
     var found = state.selectedChallenges.filter((schallenge) => challenge.id === schallenge.id)
     if (found.length === 0) {
-      state.selectedChallenges.push(challenge)
+      if (challenge.id === 0) {
+        state.selectedChallenges = [challenge]
+      } else {
+        var foundAll = state.selectedChallenges.filter((schallenge) => 0 === schallenge.id)
+        if (foundAll.length > 0) {
+          state.selectedChallenges.splice(foundAll, 1)
+        }
+        state.selectedChallenges.push(challenge)
+      }
     }
     this.dispatch('filters/getNext')
   },
@@ -83,6 +98,9 @@ const mutations = {
     var found = state.selectedChallenges.filter((schallenge) => challenge.id === schallenge.id)
     if (found.length > 0) {
       state.selectedChallenges.splice(found, 1)
+      if (state.selectedChallenges.length === 0) {
+        state.selectedChallenges.push(allChallenge)
+      }
     }
     this.dispatch('filters/getNext')
   },
@@ -95,6 +113,9 @@ const mutations = {
     state.currentIndex = index
   },
   resetState (state) {
+    //state.currentIndex = 0
+    //state.keyword = ''
+    //state.selectedChallenges = []
     Object.assign(state, getDefaultState())
   }
 }
