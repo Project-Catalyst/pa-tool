@@ -16,13 +16,17 @@ const state = getDefaultState()
 
 // getters
 const getters = {
-  filteredProposals: state => {
+  filteredProposals: (state, _, rootState, rootGetters) => {
     let lproposals = JSON.parse(JSON.stringify(staticProposals))
     if (state.selectedChallenges.length > 0) {
       let filters = state.selectedChallenges.map(el => el.id)
       if (filters.indexOf(0) === -1) {
         lproposals = lproposals.filter(p => filters.indexOf(p.category) > -1)
       }
+    }
+    let locAssessmentsIds = rootGetters['assessments/ids']
+    if (locAssessmentsIds.length > 0) {
+      lproposals = lproposals.filter(p => locAssessmentsIds.indexOf(p.id) === -1)
     }
     if (state.keyword.trim().length >= 3) {
       lproposals = lproposals.filter(
