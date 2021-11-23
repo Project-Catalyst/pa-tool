@@ -8,9 +8,9 @@
         <b-message  type="is-info" class="is-size-6">
           This checklist is designed to help you provide better quality assessments and feedback to the proposer. It is not mandatory, however using it can help give you an indication of how well you've applied the guidelines to your assessment.
         </b-message>
-        <div class="form-group mb-3" v-for="group,idx in activeQuestions" :key="`g-${idx}`">
-          <h3 class="mb-2 has-text-weight-bold">{{group.criterium}}</h3>
-          <div class="block mb-1" v-for="question,idx2 in group.questions" :key="`q-${idx2}`">
+        <div class="form-group mb-3">
+          <h3 class="mb-2 has-text-weight-bold">{{criterium.title}}</h3>
+          <div class="block mb-1" v-for="question,idx2 in criterium.questions" :key="`q-${idx2}`">
             <b-checkbox class="mb-1" v-model="selected" :native-value="question">
               {{ question }}
             </b-checkbox>
@@ -35,38 +35,23 @@
 
 <script>
 
-import questions from '../assets/data/questions.json'
-
 export default {
   name: 'Checklist',
-  props: ['challenge', 'proposal'],
+  props: ['proposal', 'criterium'],
   data() {
     return {
-      questions: questions,
       selected: []
     }
   },
   methods: {
     setAssessed(result) {
-      this.$emit('assessed', result)
+      this.$emit('self-evaluated', result)
       this.$emit('close')
     }
   },
   computed: {
-    activeQuestions() {
-      return this.questions.filter((group) => {
-        if (group.challenges.indexOf(this.challenge.id) > -1) {
-          return true
-        }
-        return false
-      })
-    },
     totNumber() {
-      let tot = 0
-      this.activeQuestions.forEach((group) => {
-        tot = tot + group.questions.length
-      })
-      return tot
+      return this.criterium.questions.length
     },
     disabled() {
       return false

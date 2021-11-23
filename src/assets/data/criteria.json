@@ -1,0 +1,36 @@
+[
+  {
+    "c_id": 1,
+    "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119],
+    "question": "This proposal effectively addresses the challenge",
+    "title": "Impact",
+    "help": "Lorem ipsum",
+    "questions": [
+      "the problem statement defines a problem within the challenge?",
+      "the proposal has a positive impact on the Cardano ecosystem?"
+    ]
+  },
+  {
+    "c_id": 2,
+    "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119],
+    "question": "Given experience and plan presented it is highly likely this proposal will be implemented successfully",
+    "title": "Feasibility",
+    "help": "Lorem ipsum",
+    "questions": [
+      "the proposer's team has relevant experience and/or references?",
+      "there is a detailed implementable plan?",
+      "the budget is understandable and reasonable?"
+    ]
+  },
+  {
+    "c_id": 3,
+    "challenges": [26094,26103,26104,26105,26106,26107,26108,26109,26110,26111,26112,26113,26114,26115,26116,26117,26118,26119],
+    "question": "The information provided is sufficient to audit the progress and the success of the proposal.",
+    "title": "Auditability",
+    "help": "Lorem ipsum",
+    "questions": [
+      "metrics / KPIs are presented and make sense?",
+      "the community can track the progress of the proposal?"
+    ]
+  }
+]
