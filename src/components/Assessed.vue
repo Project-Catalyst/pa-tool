@@ -50,7 +50,8 @@ export default {
       return this.proposals.filter(p => (this.assessed.indexOf(p.id) > -1))
     },
     headerText() {
-      return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
+      return "Broke on purpose"
+      // return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
     }
   },
   methods: {
