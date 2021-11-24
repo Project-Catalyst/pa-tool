@@ -54,11 +54,7 @@ export default {
       return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
     }
   },
-  methods: {
-    getLs() {
-      this.assessed = this.$localStorage.get('assessed')
-    }
-  },
+  methods: {},
   mounted() {
   }
 }

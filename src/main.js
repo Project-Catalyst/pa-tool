@@ -6,8 +6,6 @@ import App from './App.vue'
 import router from './router'
 import store from "./store";
 import './plugins/axios'
-import './plugins/multiselect';
-import './plugins/localstorage';
 
 import "buefy/dist/buefy.css";
 import 'vue-simple-markdown/dist/vue-simple-markdown.css'
@@ -21,11 +19,5 @@ Vue.use(VueSimpleMarkdown)
 new Vue({
   router,
   store,
-  render: h => h(App),
-  localStorage: {
-    assessed: {
-      type: Object,
-      default: []
-    }
-  }
+  render: h => h(App)
 }).$mount('#app')

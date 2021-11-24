@@ -96,8 +96,6 @@ export default {
 </script>
 
 
-<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-
 <style scoped lang="scss">
   .multiselect__tags-wrap .tag {
     margin-right: 10px;
