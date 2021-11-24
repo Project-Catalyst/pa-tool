@@ -9,13 +9,13 @@ const state = getDefaultState()
 const defaultAssessment = (id) => {
   return {
     id: id,
-    rating_1: 0,
+    rate_1: 0,
     note_1: '',
     self_ev_1: false,
-    rating_2: 0,
+    rate_2: 0,
     note_2: '',
     self_ev_2: false,
-    rating_3: 0,
+    rate_3: 0,
     note_3: '',
     self_ev_3: false,
     last_update: 0

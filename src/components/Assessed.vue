@@ -8,25 +8,11 @@
       @click="open = !open"
     ></b-button>
     <div class="list content">
-      <div class="proposal-preview"
+      <assessment-preview
         :key="proposal.id"
-        v-for="proposal in assessedProposals">
-        <div class="prop-title">
-          <router-link
-            :to="{ name: 'Proposal', params: { id: proposal.id} }">
-            {{proposal.title}}
-          </router-link>
-        </div>
-        <b-button
-          tag="a"
-          size="is-small"
-          :href="proposal.url"
-          icon-left="link"
-          type="is-primary"
-          target="_blank">
-          Open
-        </b-button>
-      </div>
+        v-for="proposal in assessedProposals"
+        :proposal="proposal"
+      />
     </div>
   </div>
 </template>
@@ -36,8 +22,13 @@
 import { mapGetters } from "vuex";
 import proposals from '@/assets/data/proposals.json'
 
+import AssessmentPreview from '@/components/AssessmentPreview'
+
 export default {
   name: 'Assessed',
+  components: {
+    AssessmentPreview
+  },
   data() {
     return {
       proposals: proposals,
@@ -46,12 +37,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters("assessments", ["ids"]),
+    ...mapGetters("assessments", ["ids", "indexed"]),
     assessedProposals() {
       return this.proposals.filter(p => (this.ids.indexOf(p.id) > -1))
+        .map((p) => {
+          return {...p, ...this.indexed[p.id]}
+        })
     },
     headerText() {
-      return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
+      return `My assessed proposals (${this.assessedProposals.length}/${this.proposals.length})`
     }
   },
   methods: {},
@@ -84,17 +78,6 @@ export default {
       overflow: auto;
       @include mobile {
         max-height: 80vh;
-      }
-      .proposal-preview {
-        padding: 10px 20px;
-        width: 100%;
-        display: flex;
-        .prop-title {
-          flex-grow: 1;
-        }
-        &:nth-child(2n + 1) {
-          background: #f1f1f1;
-        }
       }
     }
   }
