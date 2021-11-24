@@ -23,7 +23,7 @@
           :href="proposal.url"
           icon-left="link"
           type="is-primary"
-          target="blank">
+          target="_blank">
           Open
         </b-button>
       </div>
@@ -33,7 +33,7 @@
 
 <script>
 
-import { EventBus } from './../EventBus';
+import { mapGetters } from "vuex";
 import proposals from '@/assets/data/proposals.json'
 
 export default {
@@ -46,12 +46,12 @@ export default {
     }
   },
   computed: {
+    ...mapGetters("assessments", ["ids"]),
     assessedProposals() {
-      return this.proposals.filter(p => (this.assessed.indexOf(p.id) > -1))
+      return this.proposals.filter(p => (this.ids.indexOf(p.id) > -1))
     },
     headerText() {
-      return "Broke on purpose"
-      // return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
+      return `Assessed Proposals (${this.assessedProposals.length}/${this.proposals.length})`
     }
   },
   methods: {
@@ -60,8 +60,6 @@ export default {
     }
   },
   mounted() {
-    EventBus.$on('update-assessed', this.getLs)
-    this.getLs()
   }
 }
 </script>
