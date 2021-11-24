@@ -118,12 +118,13 @@
       :key="`modal-${qid}`"
       has-modal-card
       trap-focus
-      :destroy-on-hide="false"
+      :destroy-on-hide="true"
       aria-role="dialog"
       aria-label="Self Checklist"
       aria-modal>
       <template #default="props">
         <checklist
+        :assessment="assessment"
         v-bind="{criterium: criterium(qid)}"
         @self-evaluated="selfEvaluated(qid, $event)"
         @close="props.close" />
@@ -150,7 +151,7 @@ export default {
         2: false,
         3: false
       },
-      savedAt: 'Not Saved',
+      savedAt: 'Loading...',
       interval: false
     }
   },
@@ -260,17 +261,19 @@ export default {
       })
     },
     updateSavedAt() {
-      if (this.assessment.last_update === 0) {
-        this.savedAt = 'Not saved'
-      } else {
-        let diff = this.assessment.last_update - moment().utc().unix()
-        let duration = moment.duration(diff, "seconds").humanize(true)
-        this.savedAt = `Saved ${duration}`
+      if (this.assessment) {
+        if (this.assessment.last_update === 0) {
+          this.savedAt = 'Not saved'
+        } else {
+          let diff = this.assessment.last_update - moment().utc().unix()
+          let duration = moment.duration(diff, "seconds").humanize(true)
+          this.savedAt = `Saved ${duration}`
+        }
       }
     }
   },
   mounted() {
-    this.updateSavedAt()
+    setTimeout(() => this.updateSavedAt(), 500)
     this.interval = setInterval(() => {
       this.updateSavedAt()
     }, 15 * 1000)

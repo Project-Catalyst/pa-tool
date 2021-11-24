@@ -11,7 +11,7 @@
         <div class="form-group mb-3">
           <h3 class="mb-2 has-text-weight-bold">{{criterium.title}}</h3>
           <div class="block mb-1" v-for="question,idx2 in criterium.questions" :key="`q-${idx2}`">
-            <b-checkbox class="mb-1" v-model="selected" :native-value="question">
+            <b-checkbox class="mb-1" v-model="selectedKeys" :native-value="question">
               {{ question }}
             </b-checkbox>
           </div>
@@ -19,7 +19,7 @@
       </section>
       <footer class="modal-card-foot is-justify-content-flex-end">
         <b-button
-            label="Cancel"
+            label="Reset"
             @click="setAssessed(false)" />
         <b-button
           :disabled="disabled"
@@ -37,14 +37,17 @@
 
 export default {
   name: 'Checklist',
-  props: ['proposal', 'criterium'],
+  props: ['assessment', 'criterium'],
   data() {
     return {
-      selected: []
+      selectedKeys: []
     }
   },
   methods: {
     setAssessed(result) {
+      if(result) {
+        result = this.selectedKeys.map((el) => this.criterium.questions.indexOf(el))
+      }
       this.$emit('self-evaluated', result)
       this.$emit('close')
     }
@@ -59,9 +62,12 @@ export default {
     }
   },
   mounted() {
-    this.$on('close', function() {
-      this.selected = []
-    })
+    if (this.assessment[`self_ev_${this.criterium.c_id}`]) {
+      this.selectedKeys = this.assessment[`self_ev_${this.criterium.c_id}`]
+        .map((el) => this.criterium.questions[el])
+    } else {
+      this.selectedKeys = []
+    }
   }
 }
 </script>

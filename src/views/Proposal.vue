@@ -86,7 +86,6 @@ import moment from 'moment'
 import { mapState } from "vuex";
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
-import { EventBus } from './../EventBus';
 import CFilter from '@/components/Filter'
 import Assessment from '@/components/Assessment'
 import ChallengeBrief from '@/components/ChallengeBrief'
@@ -176,40 +175,8 @@ export default {
     }
   },
   methods: {
-    setReviewed() {
-      if (!this.isReviewed) {
-        if (this.questionsNumber > 0) {
-          this.modalActive = true
-        } else {
-          this.confirmAssessed(true)
-        }
-      } else {
-        let index = this.assessed.indexOf(this.proposal.id)
-        this.assessed.splice(index, 1)
-        this.$localStorage.set('assessed', this.assessed)
-        EventBus.$emit('update-assessed')
-      }
-    },
-    confirmAssessed(res) {
-      if (res && !this.isReviewed) {
-        this.assessed.push(this.proposal.id)
-      } else if (!res) {
-        this.getLs()
-      }
-      this.$localStorage.set('assessed', this.assessed)
-      EventBus.$emit('update-assessed')
-    },
-    forceReviewed() {
-      if (!this.isReviewed) {
-        this.setReviewed()
-      }
-    },
-    getLs() {
-      this.assessed = this.$localStorage.get('assessed')
-    }
   },
   mounted() {
-    this.getLs()
   }
 
 }
