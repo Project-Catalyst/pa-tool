@@ -26,10 +26,17 @@
             <b-icon size="is-medium" icon="check-circle" v-if="this.assessment.self_ev_1" />
           </div>
         </div>
-        <div class="column is-10">
+        <div class="column is-10 is-relative">
           <b-field :label="`Rationale for ${criterium(1).title}:`">
             <b-input type="textarea" v-model="debouncedNote1"></b-input>
           </b-field>
+          <b-button
+            :disabled="(this.assessment.note_1.length === 0)"
+            class="absolute-button"
+            @click="copyText('note_1')"
+            icon-left="content-copy"
+            type="is-primary is-small">
+          </b-button>
         </div>
       </div>
       <div class="criterium mb-4 columns is-multiline">
@@ -50,10 +57,17 @@
             <b-icon size="is-medium" icon="check-circle" v-if="this.assessment.self_ev_2" />
           </div>
         </div>
-        <div class="column is-10">
+        <div class="column is-10 is-relative">
           <b-field :label="`Rationale for ${criterium(2).title}:`">
             <b-input type="textarea" v-model="debouncedNote2"></b-input>
           </b-field>
+          <b-button
+            :disabled="(this.assessment.note_2.length === 0)"
+            class="absolute-button"
+            @click="copyText('note_2')"
+            icon-left="content-copy"
+            type="is-primary is-small">
+          </b-button>
         </div>
       </div>
       <div class="criterium mb-4 columns is-multiline">
@@ -74,10 +88,17 @@
             <b-icon size="is-medium" icon="check-circle" v-if="this.assessment.self_ev_3" />
           </div>
         </div>
-        <div class="column is-10">
+        <div class="column is-10 is-relative">
           <b-field :label="`Rationale for ${criterium(3).title}:`">
             <b-input type="textarea" v-model="debouncedNote3"></b-input>
           </b-field>
+          <b-button
+            :disabled="(this.assessment.note_3.length === 0)"
+            class="absolute-button"
+            @click="copyText('note_3')"
+            icon-left="content-copy"
+            type="is-primary is-small">
+          </b-button>
         </div>
       </div>
     </div>
@@ -222,6 +243,14 @@ export default {
     },
     selfEvaluated(id, val) {
       this.setValue(`self_ev_${id}`, val)
+    },
+    copyText(field) {
+      this.$clipboard(this.assessment[field])
+      this.$buefy.notification.open({
+        message: 'Rationale copied to clipboard. Paste it in IdeaScale!',
+        type: 'is-primary',
+        position: 'is-bottom-right'
+      })
     }
   },
   mounted() {
@@ -229,3 +258,11 @@ export default {
 }
 
 </script>
+
+<style lang="scss">
+  .absolute-button {
+    position: absolute !important;
+    bottom: 30px;
+    right: 20px !important;
+  }
+</style>
