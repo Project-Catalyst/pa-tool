@@ -7,7 +7,10 @@
       type="is-primary">
       Create Assessment
     </b-button>
-    <div class="form-wrapper mb-4 content" v-if="assessment">
+    <div class="form-wrapper mb-4 content is-relative" v-if="assessment">
+      <b-field class="saved-at">
+        <b-tag icon="content-save-outline">{{savedAt}}</b-tag>
+      </b-field>
       <div class="criterium mb-4 columns is-multiline">
         <div class="column is-12">
           <h4>{{ criterium(1).question }}</h4>
@@ -131,6 +134,7 @@
 
 <script>
 
+import moment from 'moment'
 import { mapGetters } from "vuex";
 import debounce from 'lodash.debounce';
 import criteria from '@/assets/data/criteria.json'
@@ -145,7 +149,9 @@ export default {
         1: false,
         2: false,
         3: false
-      }
+      },
+      savedAt: 'Not Saved',
+      interval: false
     }
   },
   components: {
@@ -230,6 +236,7 @@ export default {
         field: field,
         value: val
       });
+      this.updateSavedAt()
     },
     criterium(id) {
       let fCriteria = this.criteria.filter((c) => (c.c_id === id) && (c.challenges.indexOf(this.proposal.category) > -1))
@@ -251,9 +258,25 @@ export default {
         type: 'is-primary',
         position: 'is-bottom-right'
       })
+    },
+    updateSavedAt() {
+      if (this.assessment.last_update === 0) {
+        this.savedAt = 'Not saved'
+      } else {
+        let diff = this.assessment.last_update - moment().utc().unix()
+        let duration = moment.duration(diff, "seconds").humanize(true)
+        this.savedAt = `Saved ${duration}`
+      }
     }
   },
   mounted() {
+    this.updateSavedAt()
+    this.interval = setInterval(() => {
+      this.updateSavedAt()
+    }, 15 * 1000)
+  },
+  beforeDestroy() {
+    clearInterval(this.interval)
   }
 }
 
@@ -264,5 +287,10 @@ export default {
     position: absolute !important;
     bottom: 30px;
     right: 20px !important;
+  }
+  .saved-at {
+    position: absolute !important;
+    top: 0;
+    right: 0;
   }
 </style>

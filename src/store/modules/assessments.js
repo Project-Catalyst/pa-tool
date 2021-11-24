@@ -1,3 +1,4 @@
+import moment from 'moment'
 // initial state
 const getDefaultState = () => ({
   all: []
@@ -16,7 +17,8 @@ const defaultAssessment = (id) => {
     self_ev_2: false,
     rating_3: 0,
     note_3: '',
-    self_ev_3: false
+    self_ev_3: false,
+    last_update: 0
   }
 }
 
@@ -57,6 +59,7 @@ const mutations = {
     let assessment = state.all.find(a => parseInt(a.id) === parseInt(data.id));
     if (assessment) {
       assessment[data.field] = data.value
+      assessment.last_update = moment().utc().unix()
     }
   },
   resetState (state) {
