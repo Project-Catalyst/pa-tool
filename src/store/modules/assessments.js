@@ -1,4 +1,4 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 // initial state
 const getDefaultState = () => ({
   all: []
@@ -64,7 +64,7 @@ const mutations = {
     let assessment = state.all.find(a => parseInt(a.id) === parseInt(data.id));
     if (assessment) {
       assessment[data.field] = data.value
-      assessment.last_update = moment().utc().unix()
+      assessment.last_update = dayjs().unix()
     }
   },
   resetState (state) {

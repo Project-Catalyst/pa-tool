@@ -23,7 +23,6 @@
 <script>
 // @ is an alias to /src
 
-import moment from 'moment'
 import Counter from '@/components/Counter'
 
 export default {
@@ -33,17 +32,17 @@ export default {
   },
   data() {
     return {
-      registrationStartsUTC: moment.utc('2021-12-02 11:00:00'),
-      assessStartsUTC: moment.utc('2021-12-09 11:00:00'),
+      registrationStartsUTC: this.$dayjs.utc('2021-12-02 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      assessStartsUTC: this.$dayjs.utc('2021-12-09 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
       now: 0,
     }
   },
   methods: {
     getNow() {
-      this.now = moment().utc().unix()
+      this.now = this.$dayjs().utc().unix()
     },
     getDuration(time) {
-      let duration = moment.duration(time, "seconds")
+      let duration = this.$dayjs.duration(time, "seconds")
       return {
         d: duration.days(),
         h: duration.hours(),
@@ -54,7 +53,7 @@ export default {
   },
   computed: {
     isModalActive() {
-      return false
+      return true
       // return (this.secsToAssess > 0)
     },
     secsToRegistration() {

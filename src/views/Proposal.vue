@@ -77,7 +77,6 @@
 
 
 <script>
-import moment from 'moment'
 import { mapState } from "vuex";
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
@@ -162,13 +161,13 @@ export default {
       return false
     },
     fLastUpdateDuration() {
-      let now = moment().utc().unix()
-      let last = moment(this.lastUpdate).utc().unix()
+      let now = this.$dayjs().unix()
+      let last = this.$dayjs(this.lastUpdate).utc().unix()
       let diff = last - now
-      return moment.duration(diff, "seconds").humanize(true)
+      return this.$dayjs.duration(diff, "seconds").humanize(true)
     },
     fLastUpdate() {
-      return moment(this.lastUpdate).format('DD MMM YYYY HH:mm')
+      return this.$dayjs(this.lastUpdate).format('DD MMM YYYY HH:mm')
     }
   },
   methods: {

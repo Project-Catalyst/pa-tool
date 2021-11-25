@@ -140,7 +140,6 @@
 
 <script>
 
-import moment from 'moment'
 import { mapGetters } from "vuex";
 import debounce from 'lodash.debounce';
 import criteria from '@/assets/data/criteria.json'
@@ -278,8 +277,8 @@ export default {
         if (this.assessment.last_update === 0) {
           this.savedAt = 'Not saved'
         } else {
-          let diff = this.assessment.last_update - moment().utc().unix()
-          let duration = moment.duration(diff, "seconds").humanize(true)
+          let diff = this.assessment.last_update - this.$dayjs().utc().unix()
+          let duration = this.$dayjs.duration(diff, "seconds").humanize(true)
           this.savedAt = `Saved ${duration}`
         }
       }
