@@ -55,6 +55,7 @@
           target="blank">
           {{ ctaText }}
         </b-button>
+        <suggest :size="'is-normal'" />
         <!--
         <b-checkbox
           :value="isReviewed"
@@ -65,6 +66,7 @@
       </div>
     </div>
     <assessment :proposal="proposal" />
+    <suggest />
     <b-modal
       v-model="briefActive"
       has-modal-card
@@ -89,6 +91,7 @@ import proposals from '../assets/data/proposals.json'
 import CFilter from '@/components/Filter'
 import Assessment from '@/components/Assessment'
 import ChallengeBrief from '@/components/ChallengeBrief'
+import Suggest from '@/components/Suggest'
 
 
 export default {
@@ -105,7 +108,8 @@ export default {
   components: {
     ChallengeBrief,
     CFilter,
-    Assessment
+    Assessment,
+    Suggest
   },
   computed: {
     ...mapState({

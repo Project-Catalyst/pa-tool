@@ -18,7 +18,8 @@ const defaultAssessment = (id) => {
     rate_3: 0,
     note_3: '',
     self_ev_3: false,
-    last_update: 0
+    last_update: 0,
+    submitted: false
   }
 }
 
@@ -45,6 +46,10 @@ const actions = {
 
 // mutations
 const mutations = {
+  setAssessments (state, assessments) {
+    console.log(assessments)
+    state.all = assessments
+  },
   addAssessment (state, proposalId) {
     let assessment = defaultAssessment(proposalId)
     state.all.push(assessment)

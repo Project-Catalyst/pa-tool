@@ -105,6 +105,11 @@
         </div>
       </div>
     </div>
+    <b-field>
+      <b-checkbox class="mb-1" v-model="submitted" v-if="assessment">
+        Confirm that you submitted the Assessment to IdeaScale
+      </b-checkbox>
+    </b-field>
     <b-button
       v-if="assessment"
       @click="deleteAssessment"
@@ -210,6 +215,14 @@ export default {
       set: debounce(function(val) {
         this.setValue('note_3', val)
       }, 500)
+    },
+    submitted: {
+      get() {
+        return this.assessment.submitted;
+      },
+      set: debounce(function(val) {
+        this.setValue('submitted', val)
+      }, 500)
     }
   },
   methods: {
@@ -286,10 +299,13 @@ export default {
 </script>
 
 <style lang="scss">
+  textarea {
+    padding-right: 40px !important;
+  }
   .absolute-button {
     position: absolute !important;
     bottom: 30px;
-    right: 20px !important;
+    right: 34px !important;
   }
   .saved-at {
     position: absolute !important;

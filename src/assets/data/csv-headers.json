@@ -1,0 +1,58 @@
+{
+  "id": {
+    "type": "integer",
+    "label": "id"
+  },
+  "title": {
+    "type": "string",
+    "label": "Proposal Title"
+  },
+  "url": {
+    "type": "string",
+    "label": "Proposal Link"
+  },
+  "last_update": {
+    "type": "integer",
+    "label": "LastUpdate"
+  },
+  "note_1": {
+    "type": "string",
+    "label": "Note 1"
+  },
+  "note_2": {
+    "type": "string",
+    "label": "Note 2"
+  },
+  "note_3": {
+    "type": "string",
+    "label": "Note 3"
+  },
+  "rate_1": {
+    "type": "integer",
+    "label": "Rate 1"
+  },
+  "rate_2": {
+    "type": "integer",
+    "label": "Rate 2"
+  },
+  "rate_3": {
+    "type": "integer",
+    "label": "Rate 3"
+  },
+  "self_ev_1": {
+    "type": "array",
+    "label": "Self Evaluation 1"
+  },
+  "self_ev_2": {
+    "type": "array",
+    "label": "Self Evaluation 2"
+  },
+  "self_ev_3": {
+    "type": "array",
+    "label": "Self Evaluation 3"
+  },
+  "submitted": {
+    "type": "boolean",
+    "label": "Submitted to IdeaScale"
+  }
+}

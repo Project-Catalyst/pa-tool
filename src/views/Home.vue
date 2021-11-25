@@ -35,15 +35,18 @@
         Join the <a href="https://t.me/CatalystCommunityAdvisors" target="_blank">community advisor TG support channel</a>
       </p>
     </b-message>
+    <suggest />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Suggest from '@/components/Suggest'
 
 export default {
   name: 'Home',
   components: {
+    Suggest
   }
 }
 </script>
