@@ -56,13 +56,6 @@
           {{ ctaText }}
         </b-button>
         <suggest :size="'is-normal'" />
-        <!--
-        <b-checkbox
-          :value="isReviewed"
-          @click.native.prevent="setReviewed">
-          Proposal reviewed
-        </b-checkbox>
-        -->
       </div>
     </div>
     <assessment :proposal="proposal" />

@@ -35,7 +35,7 @@ const getters = {
       )
     }
     return lproposals
-      .sort(() => (Math.random() > .5) ? 1 : -1)
+      // .sort(() => (Math.random() > .5) ? 1 : -1)
       .sort(
         (a,b) => (a.no_assessments > b.no_assessments) ? 1 : ((b.no_assessments > a.no_assessments) ? -1 : 0)
       )
@@ -73,22 +73,22 @@ const actions = {
       }
     })
   },
-  getNext({ commit, state, getters }) {
+  getNext({ commit, state, getters }, fromFilter) {
     let fProposals = getters.filteredProposals
     if (fProposals[state.currentIndex]) {
       let newId = fProposals[state.currentIndex].id
       let currentId = false
-      if (router.currentRoute.name === 'Proposal') {
+      if (router.currentRoute.name === 'Proposal' || !fromFilter) {
         currentId = router.currentRoute.params.id
-      }
-      if (newId !== currentId) {
-        router.push({ name: 'Proposal', params:{ id: newId }})
+        if (newId !== currentId) {
+          router.push({ name: 'Proposal', params:{ id: newId }})
+        }
       }
       commit('setCurrentIndex', state.currentIndex + 1)
     } else {
       commit('setCurrentIndex', 0)
     }
-  }
+  },
 }
 
 // mutations
@@ -113,7 +113,7 @@ const mutations = {
         state.selectedChallenges.push(challenge)
       }
     }
-    this.dispatch('filters/getNext')
+    this.dispatch('filters/getNext', true)
   },
   removeChallenge(state, challenge) {
     state.currentIndex = 0
@@ -124,12 +124,12 @@ const mutations = {
         state.selectedChallenges.push(allChallenge)
       }
     }
-    this.dispatch('filters/getNext')
+    this.dispatch('filters/getNext', true)
   },
   setKeyword(state, keyword) {
     state.currentIndex = 0
     state.keyword = keyword
-    this.dispatch('filters/getNext')
+    this.dispatch('filters/getNext', true)
   },
   setCurrentIndex(state, index) {
     state.currentIndex = index

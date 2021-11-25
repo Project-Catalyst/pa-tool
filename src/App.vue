@@ -10,9 +10,14 @@
           </b-navbar-item>
       </template>
       <template #end>
-        <b-navbar-item @click="next">
-          Proposals
-        </b-navbar-item>
+        <b-navbar-dropdown label="Proposals">
+          <b-navbar-item @click="next">
+            Suggest next
+          </b-navbar-item>
+          <b-navbar-item tag="router-link" :to="{ name: 'Proposals' }">
+            List
+          </b-navbar-item>
+        </b-navbar-dropdown>
         <b-navbar-item tag="router-link" :to="{ name: 'Assessed' }">
           My Assessments
         </b-navbar-item>
@@ -83,7 +88,7 @@ export default {
   },
   methods: {
     next() {
-      this.$store.dispatch('filters/getNext')
+      this.$store.dispatch('filters/getNext', false)
     }
   }
 }

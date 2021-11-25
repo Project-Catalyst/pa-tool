@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Proposal from '../views/Proposal.vue'
 import Assessed from '../views/Assessed.vue'
+import Proposals from '../views/Proposals.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/your-assessments',
     name: 'Assessed',
     component: Assessed
+  },
+  {
+    path: '/proposals',
+    name: 'Proposals',
+    component: Proposals
   },
   {
     path: '/proposal/:id',

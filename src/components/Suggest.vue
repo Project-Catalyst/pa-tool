@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     suggest() {
-      this.$store.dispatch('filters/getNext')
+      this.$store.dispatch('filters/getNext', false)
     },
   },
   computed: {
