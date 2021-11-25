@@ -39,6 +39,9 @@ const getters = {
       .sort(
         (a,b) => (a.no_assessments > b.no_assessments) ? 1 : ((b.no_assessments > a.no_assessments) ? -1 : 0)
       )
+  },
+  totalCount: (state) => {
+    return state.proposals.reduce((n, {no_assessments}) => n + no_assessments, 0)
   }
 }
 

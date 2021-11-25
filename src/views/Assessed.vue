@@ -4,6 +4,9 @@
       <p class="title">
         {{headerText}}
       </p>
+      <p class="subtitle">
+        {{subheaderText}} <span class="is-size-6">[Including blanks]</span>
+      </p>
       <b-message>
       This page collects all the proposals that you assessed <b>within the ca-tool</b> and could be used to keep your assessments organized.<br /><br />
         Remember that you have to <b>copy-paste</b> each assessment in <b>IdeaScale</b> to officially submit them.<br /><br />
@@ -66,11 +69,13 @@ export default {
       proposals: proposals,
       assessed: [],
       csv: null,
-      csvHeaders: csvHeaders
+      csvHeaders: csvHeaders,
+      goalAssPerProposal: 5
     }
   },
   computed: {
     ...mapGetters("assessments", ["ids", "indexed"]),
+    ...mapGetters("filters", ["totalCount"]),
     assessedProposals() {
       return this.proposals.filter(p => (this.ids.indexOf(p.id) > -1))
         .map((p) => {
@@ -79,6 +84,9 @@ export default {
     },
     headerText() {
       return `My Assessments (${this.assessedProposals.length}/${this.proposals.length})`
+    },
+    subheaderText() {
+      return `Total assessments submitted in IdeaScale (${this.totalCount}/${this.proposals.length * this.goalAssPerProposal})`
     }
   },
   methods: {
