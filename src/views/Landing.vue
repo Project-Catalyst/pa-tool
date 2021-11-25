@@ -1,5 +1,5 @@
 <template>
-  <b-modal v-model="isModalActive" has-modal-card :can-cancel="false">
+  <b-modal v-model="isModalActive" has-modal-card>
     <div class="countdown">
       <div class="modal-card" style="width: auto">
         <div class="modal-card-body has-text-centered">
@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     isModalActive() {
-      return true
+      return false
       // return (this.secsToAssess > 0)
     },
     secsToRegistration() {
