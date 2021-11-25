@@ -5,7 +5,7 @@
         <p class="modal-card-title"><span v-if="challenge">{{challenge.title}} - </span>Challenge brief</p>
       </header>
       <section class="modal-card-body markdown">
-        <vue-simple-markdown :source="text" />
+        {{text}}
       </section>
     </div>
   </div>
