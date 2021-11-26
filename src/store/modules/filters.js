@@ -3,7 +3,8 @@ import staticProposals from '@/assets/data/proposals.json'
 
 const allChallenge = {
   title: "All",
-  id: 0
+  id: 0,
+  count: 711
 }
 // initial state
 const getDefaultState = () => ({

@@ -17,6 +17,9 @@
         @add="selectChallenge"
         @remove="unselectChallenge"
         @typing="getFilteredChallenges">
+        <template v-slot="props">
+          {{props.option.title}} ({{props.option.count}})
+        </template>
         <template #empty>
             There are no items
         </template>
@@ -85,7 +88,8 @@ export default {
       }
       this.filteredChallenges = [{
         title: "All",
-        id: 0
+        id: 0,
+        count: 711
       }, ...filteredChallenges]
     }
   },
