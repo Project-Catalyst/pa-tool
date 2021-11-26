@@ -1,5 +1,5 @@
 <template>
-  <b-modal v-model="isModalActive" has-modal-card>
+  <b-modal v-model="isModalActive" has-modal-card :can-cancel="false">
     <div class="countdown">
       <div class="modal-card" style="width: auto">
         <div class="modal-card-body has-text-centered">
@@ -14,7 +14,14 @@
             <counter :d="toAssess.d" :h="toAssess.h" :m="toAssess.m" :s="toAssess.s" />
             <span class="is-size-4 has-text-weight-bold">{{ fAssessStart }} UTC</span>
           </div>
+          <div class="subtitle mt-4">
+            In the meantime take a look at the <a href="https://cardanocataly.st/en/community-advisor/guide.html" target="_blank">
+              CA Assessment Guide</a>.
+          </div>
         </div>
+        <footer class="modal-card-foot">
+          <b-button label="Close" @click="modalActivable = false" />
+        </footer>
       </div>
     </div>
   </b-modal>
@@ -34,7 +41,8 @@ export default {
     return {
       registrationStartsUTC: this.$dayjs.utc('2021-12-02 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
       assessStartsUTC: this.$dayjs.utc('2021-12-09 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
-      now: 0,
+      now: this.$dayjs().utc().unix(),
+      modalActivable: true
     }
   },
   methods: {
@@ -53,8 +61,7 @@ export default {
   },
   computed: {
     isModalActive() {
-      return false
-      // return (this.secsToAssess > 0)
+      return (this.secsToAssess > 0) && this.modalActivable
     },
     secsToRegistration() {
       return this.registrationStartsUTC.unix() - this.now
