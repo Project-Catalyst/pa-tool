@@ -5,9 +5,9 @@
         <b-navbar-item tag="router-link" :to="{ name: 'Home' }">
           <img src="@/assets/images/catalyst.png" alt="Project Catalyst" />
         </b-navbar-item>
-          <b-navbar-item class="has-text-weight-bold" tag="a" target="_blank" href="https://cardanoscan.io/pool/b61f05ec1e907ab9b069eaec6c664056c16f56cab59076109c66d2ae">
-            Stake with [AIM] pool
-          </b-navbar-item>
+        <b-navbar-item class="has-text-weight-bold" tag="a" target="_blank" href="https://cardanoscan.io/pool/b61f05ec1e907ab9b069eaec6c664056c16f56cab59076109c66d2ae">
+          Stake with [AIM] pool
+        </b-navbar-item>
       </template>
       <template #end>
         <b-navbar-dropdown label="Proposals">
@@ -18,6 +18,9 @@
             List
           </b-navbar-item>
         </b-navbar-dropdown>
+        <b-navbar-item tag="router-link" :to="{ name: 'ExampleAssessments' }">
+          Example Assessments
+        </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'Assessed' }">
           My Assessments
         </b-navbar-item>

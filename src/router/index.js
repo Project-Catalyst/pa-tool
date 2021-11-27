@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Proposal from '../views/Proposal.vue'
 import Assessed from '../views/Assessed.vue'
 import Proposals from '../views/Proposals.vue'
+import ExampleAssessments from '../views/ExampleAssessments.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/example-assessments',
+    name: 'ExampleAssessments',
+    component: ExampleAssessments
   },
   {
     path: '/your-assessments',
