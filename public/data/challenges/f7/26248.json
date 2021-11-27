@@ -1,0 +1,25 @@
+{
+  "text": "How do we create a space for ideas and projects that do not fit any of the other current Challenges?",
+  "tabs": [
+    {
+      "title": "Campaign Brief",
+      "content": "This challenge is designed to capture interesting and valuable projects that do not currently fit into other challenges.\n\nThe only constrain to submit a proposal in this challenge is that the proposal needs to be somehow related to Cardano."
+    },
+    {
+      "title": "Defining the Challenge Alignment",
+      "content": "During the assessment stage, Community Advisors should evaluate if proposals submitted in this challenge would be a good fit in any of the other existing challenges.\n\nIf this is the case, i.e., there is another challenge where the proposal would be well aligned with the challenge goals, then this proposal is not so well aligned with the 'Miscellaneous Challenge'."
+    },
+    {
+      "title": "Why is it important?",
+      "content": "Creating a Miscellaneous Challenge could enable great ideas to be funded in a specific Fund, even if they don't fit any other Challenge."
+    },
+    {
+      "title": "What does success look like",
+      "content": "Funding great ideas that focus on problems that are not covered by any other Challenge."
+    },
+    {
+      "title": "Key Metrics to measure",
+      "content": "At the end of this challenge, we will be asking ourselves: was this challenge valuable to the community?\n\n- Successfully fund proposals, approved by the community, that don't fit well any other challenges.\n- Number of identified possible Challenges to be proposed in the following Funds based on proposals submitted in the Miscellaneous Challenge."
+    }
+  ]
+}

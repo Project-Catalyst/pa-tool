@@ -1,0 +1,21 @@
+{
+  "text": "How can we make Cardano the go-to choice for DAOs to manage themselves?",
+  "tabs": [
+    {
+      "title": "Campaign Brief",
+      "content": "Currently if a DAO (even one that is aimed to build products and services around Cardano) wants to setup their DAO infrastructure, the current options are all based on, mostly, the Ethereum blockchain.\n\nThese dApps range from basic Treasury management, to Decision making in DAOs and even supporting services like Decentralized Justice. Some of them are:\n\n- https://aragon.org\n- https://daostack.io\n- https://colony.io\n- https://www.molochdao.com\n- https://abridged.io\n- https://kleros.io\n\nCardano needs:\n\n1. Similar tools to offer competitive alternative to other chains.\n2. Additional not yet existing tools to put the blockchain in an advantage when new DAOs needs to evaluate which chain to use for their platforms."
+    },
+    {
+      "title": "Why is it important?",
+      "content": "Blockchain applications have moved from trading to DeFi, to NFT. DAOs is what follows. Cardano needs to be ready for when that happens."
+    },
+    {
+      "title": "How does success look like?",
+      "content": "There are more and better solutions to manage your DAO with Cardano than with any other blockchain."
+    },
+    {
+      "title": "Key Metrics to measure",
+      "content": "- Amount of ADA coming from DAOs transaction fees after the solutions on this challenge get implemented (> than the challenge's allocated fund amount)\n- Number of DAOs that use Cardano as governance/management chain in 6 months.\n- Number of DAO toolset/frameworks available for DAO Ops (>1)."
+    }
+  ]
+}

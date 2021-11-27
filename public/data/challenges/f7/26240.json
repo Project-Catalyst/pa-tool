@@ -1,0 +1,25 @@
+{
+  "text": "What applications will provide the most value for end users in 2022?",
+  "tabs": [
+    {
+      "title": "Why is it important?",
+      "content": "Quality Dapps and integrations will increase utility & adoption of Cardano."
+    },
+    {
+      "title": "How does success look like?",
+      "content": "Novel and viable applications get built of top of Cardano attracting users. Integrations manage to pull in more adoption."
+    },
+    {
+      "title": "Key Metrics to measure",
+      "content": "To assess the challenge we will be asking ourselves: Did our efforts manage to attract users to the platform? Did our efforts result in new, viable applications built on top of Cardano?\n\nLet an \"application output\" and an \"application transaction\" be an outputs and transactions that use the applications' script addresses; and an \"application token\" be a token that's issued by the application.\n\nUsage of applications developed during the challenge:\n\n- Number/growth of application output\n- Number/growth of application transactions\n- Total volume of Ada involved in application transactions\n- Total/growth of resource usage by applications\n- Number/growth of distinct addresses mentioned in application transactions\n\nIf the application uses tokens:\n\n- Number/growth of application tokens\n- Number/growth of distinct addresses holding application tokens\n\nViability of applications developed during the challenge:\n\n- How many of the applications are still being developed at the end of 2021?\n- How many of the applications made a profit for their creators?\n- How many of the teams which built the applications grew during 2021?\n- How many of the teams which built the applications built (or plan to build) another application?"
+    },
+    {
+      "title": "Guiding questions",
+      "content": "- What are the key applications that underpin the application ecosystem on other platforms?\n- What are the most profitable or most used applications on other ecosystems?\n- What needs do users of Cardano have that could be solved by new applications?\n- What applications deliver the highest amount of value with the least amount of technical sophistication?"
+    },
+    {
+      "title": "Potential directions",
+      "content": "- Swaps, both simple and fancy variants (multi-party etc.)\n- Escrow, both simple and fancy variants\n- Integrations with existing products"
+    }
+  ]
+}
