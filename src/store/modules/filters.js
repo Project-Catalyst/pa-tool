@@ -140,6 +140,7 @@ const mutations = {
     //state.keyword = ''
     //state.selectedChallenges = []
     Object.assign(state, getDefaultState())
+    this.dispatch('filters/getLastUpdate')
   }
 }
 
