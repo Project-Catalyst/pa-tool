@@ -4,7 +4,7 @@
       v-if="!assessment"
       @click="createAssessment"
       icon-left="pencil"
-      type="is-primary">
+      type="is-primary is-medium">
       Create Assessment
     </b-button>
     <div class="form-wrapper mb-4 content is-relative" v-if="assessment">
@@ -22,7 +22,7 @@
           <b-button
             @click="getGuidingQuestions(1)"
             icon-left="help"
-            type="is-primary is-small">
+            type="is-dark is-small">
             Guiding Questions
           </b-button>
           <div class="is-full mt-4">
@@ -53,7 +53,7 @@
           <b-button
             @click="getGuidingQuestions(2)"
             icon-left="help"
-            type="is-primary is-small">
+            type="is-dark is-small">
             Guiding Questions
           </b-button>
           <div class="is-full mt-4">
@@ -84,7 +84,7 @@
           <b-button
             @click="getGuidingQuestions(3)"
             icon-left="help"
-            type="is-primary is-small">
+            type="is-dark is-small">
             Guiding Questions
           </b-button>
           <div class="is-full mt-4">
@@ -106,15 +106,19 @@
       </div>
     </div>
     <b-field>
-      <b-checkbox class="mb-1" v-model="submitted" v-if="assessment">
-        Confirm that you submitted the Assessment to IdeaScale
+      <b-checkbox
+        class="mb-4 has-text-weight-bold is-size-5"
+        :disabled="completed !== 100"
+        v-model="submitted"
+        v-if="assessment">
+        Confirm that you submitted the Assessment to IdeaScale.<br />I have copied any content created here into Ideascale.
       </b-checkbox>
     </b-field>
     <b-button
       v-if="assessment"
       @click="deleteAssessment"
       icon-left="delete"
-      type="is-primary">
+      type="is-danger">
       Delete Assessment
     </b-button>
     <b-modal
@@ -222,6 +226,19 @@ export default {
       set: debounce(function(val) {
         this.setValue('submitted', val)
       }, 500)
+    },
+    completed() {
+      if (this.assessment) {
+        const reducer = (previousValue, currentValue) => previousValue + currentValue;
+        let texts = ['note_1', 'note_2', 'note_3']
+          .map((el) => (this.assessment[el].length > 0) ? 1 : 0 )
+          .reduce(reducer)
+        let ratings = ['rate_1', 'rate_2', 'rate_3']
+          .map((el) => (this.assessment[el] > 0) ? 1 : 0 )
+          .reduce(reducer)
+        return parseInt((100 * (texts + ratings)) / 6)
+      }
+      return 0
     }
   },
   methods: {

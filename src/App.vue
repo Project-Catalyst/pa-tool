@@ -12,7 +12,7 @@
       <template #end>
         <b-navbar-dropdown label="Proposals">
           <b-navbar-item @click="next">
-            Suggest next
+            Suggest next proposal
           </b-navbar-item>
           <b-navbar-item tag="router-link" :to="{ name: 'Proposals' }">
             List

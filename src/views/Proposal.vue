@@ -4,7 +4,9 @@
     <div class="content box">
       <div class="is-flex is-align-items-center">
         <h5 class="mr-5 mb-0">{{category.title}}</h5>
-        <b-button type="is-primary" size="is-small" @click="briefActive = true">Open challenge brief</b-button>
+        <a class="has-text-weight-bold is-text-6" @click="briefActive = true">
+          [Open challenge brief]
+        </a>
       </div>
       <h1>{{proposal.title}}</h1>
       <div class="mb-4">
@@ -37,29 +39,23 @@
     </div>
     <div class="box">
       <div class="buttons">
-        <b-button
-          tag="a"
-          :href="proposal.url"
-          icon-left="pencil-plus"
-          type="is-primary"
-          v-if="autoflag"
-          @click="forceReviewed"
-          target="blank">
-          Review
-        </b-button>
-        <b-button
-          tag="a"
-          :href="proposal.url"
-          icon-left="eye"
-          type="is-primary"
-          target="blank">
-          {{ ctaText }}
-        </b-button>
-        <suggest :size="'is-normal'" />
+        <b-tooltip type="is-white" class="mr-4">
+          <b-button
+            tag="a"
+            :href="proposal.url"
+            icon-left="eye"
+            type="is-primary is-medium"
+            target="blank">
+            {{ ctaText }}
+          </b-button>
+          <template v-slot:content>
+            Links to IdeaScale
+          </template>
+        </b-tooltip>
+        <suggest :size="'is-medium'" />
       </div>
     </div>
     <assessment :proposal="proposal" />
-    <suggest />
     <b-modal
       v-model="briefActive"
       has-modal-card

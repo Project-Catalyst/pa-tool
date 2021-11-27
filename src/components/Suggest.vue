@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     suggestText() {
-      return (this.$route.name === 'Home') ? 'Suggest Proposal' : 'Suggest me another Proposal'
+      return (this.$route.name === 'Home') ? 'Suggest Proposal' : 'Suggest Another Proposal'
     }
   },
   mounted() {

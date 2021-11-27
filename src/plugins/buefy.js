@@ -14,7 +14,8 @@ import {
   Rate,
   Checkbox,
   Dialog,
-  Tabs
+  Tabs,
+  Upload
 } from "buefy";
 // import { Buefy } from "buefy"
 
@@ -35,4 +36,5 @@ Vue.use(Rate);
 Vue.use(Checkbox);
 Vue.use(Dialog);
 Vue.use(Tabs);
+Vue.use(Upload);
 //Vue.use(Buefy);

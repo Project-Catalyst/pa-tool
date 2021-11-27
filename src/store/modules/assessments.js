@@ -36,7 +36,10 @@ const getters = {
     return Object.keys(getters.indexed).map((a) => parseInt(a))
   },
   getById: (state, getters) => (id) => {
-    return getters.indexed[id]
+    if (getters.indexed[id]) {
+      return getters.indexed[id]
+    }
+    return false
   }
 }
 

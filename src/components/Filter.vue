@@ -2,7 +2,7 @@
   <div class="filter-wrapper mb-5">
     <label class="mb-2 is-flex is-flex-wrap-wrap">
       <span class="has-text-weight-bold mr-3">Filter proposals by challenge:</span>
-      <b-button type="is-primary" size="is-small" @click="clearFilter()">Clear filters</b-button>
+      <b-button type="is-warning is-light" size="is-small" @click="clearFilter()">Clear filters</b-button>
     </label>
     <b-taginput
         ref="tagInput"

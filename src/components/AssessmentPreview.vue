@@ -28,6 +28,7 @@
       </div>
       <div class="column is-4">
         <b-progress
+          type="is-success"
           class="complete-progress mt-2"
           :value="completed"
           size="is-medium"
@@ -89,7 +90,7 @@ export default {
       return (this.proposal.submitted) ? 'Submitted to IdeaScale' : 'Not submitted to IdeaScale'
     },
     editMsg() {
-      return (this.open) ? 'Close' : 'Edit assessment'
+      return (this.open) ? 'Close' : 'Access assessment'
     }
   },
   methods: {
@@ -113,11 +114,14 @@ export default {
     width: 100%;
     &:nth-child(2n + 1) {
       background: #f1f1f1;
-    }
-    .complete-progress {
-      .progress {
-        border: 1px solid #4a4a4a;
+      progress::-webkit-progress-bar {
+        background-color: #fff !important;
       }
+      progress::-moz-progress-bar {
+        background-color: #fff !important;
+      }
+    }
+    &:nth-child(2n) {
     }
     .submitted {
       .tooltip-trigger {
