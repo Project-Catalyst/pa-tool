@@ -271,7 +271,11 @@ export default {
     criterium(id) {
       let fCriteria = this.criteria.filter((c) => (c.c_id === id) && (c.challenges.indexOf(this.proposal.category) > -1))
       if (fCriteria.length > 0) {
-        return fCriteria[0]
+        let selected = fCriteria[0]
+        const questions = {
+          questions: fCriteria.map((c) => c.questions).reduce((acc, val) => acc.concat(val), [])
+        }
+        return {...selected, ...questions}
       }
       return false
     },
