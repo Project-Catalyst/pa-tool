@@ -1,21 +1,39 @@
 <template>
   <div class="checklist-wrapper">
-    <div class="modal-card" style="width: auto">
+    <div class="modal-card" style="width: 100%">
       <header class="modal-card-head">
         <p class="modal-card-title"><span v-if="challenge">{{challenge.title}} - </span>Challenge brief</p>
       </header>
       <section class="modal-card-body markdown" v-if="brief">
-        <p><strong>{{brief.text}}</strong></p>
-        <b-tabs class="mt-4" type="is-boxed" v-model="activeTab" v-if="brief.tabs">
-          <b-tab-item
-            v-for="tab, idx in brief.tabs"
-            :key="`tab-${idx}`"
-            :label="tab.title">
-            <div class="tab-text">
-              <p>{{tab.content}}</p>
+        <p class="is-size-5">{{brief.text}}</p>
+        <div class="collapses-wrapper mt-6"
+          v-if="brief.tabs">
+          <b-collapse
+            class="card"
+            animation=""
+            v-for="(collapse, index) of brief.tabs"
+            :key="index"
+            :open="isOpen == index"
+            @open="isOpen = index">
+            <template #trigger="props">
+              <div
+                class="card-header"
+                role="button">
+                <p class="card-header-title">{{ collapse.title }}</p>
+                <a class="card-header-icon">
+                  <b-icon
+                    :icon="props.open ? 'menu-down' : 'menu-up'">
+                  </b-icon>
+                </a>
+              </div>
+            </template>
+            <div class="card-content">
+              <div class="content">
+                {{ collapse.content }}
+              </div>
             </div>
-          </b-tab-item>
-        </b-tabs>
+          </b-collapse>
+        </div>
       </section>
     </div>
   </div>
@@ -31,7 +49,7 @@ export default {
   data() {
     return {
       brief: '',
-      activeTab: 0
+      isOpen: 0
     }
   },
   methods: {
@@ -55,9 +73,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.tab-text {
-  p {
-    white-space: pre-line;
-  }
+.collapses-wrapper .card-content .content {
+  white-space: pre-line;
 }
 </style>

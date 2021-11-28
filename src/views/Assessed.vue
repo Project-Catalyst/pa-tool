@@ -153,7 +153,11 @@ export default {
         hasIcon: true,
         onConfirm: () => {
           this.clear();
-          this.$buefy.toast.open('Database cleared!')
+          this.$buefy.notification.open({
+            message: 'Database cleared!',
+            type: 'is-primary',
+            position: 'is-bottom-right'
+          })
         }
       })
     },

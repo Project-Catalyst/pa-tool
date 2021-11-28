@@ -61,6 +61,7 @@
     <assessment :proposal="proposal" />
     <b-modal
       v-model="briefActive"
+      :width="960"
       has-modal-card
       trap-focus
       :destroy-on-hide="false"
