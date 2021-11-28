@@ -12,7 +12,7 @@
             size="is-small"
             :href="proposal.url"
             icon-left="link"
-            type="is-primary"
+            type="is-link"
             target="_blank">
             Open in IdeaScale
           </b-button>

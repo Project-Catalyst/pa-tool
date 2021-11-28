@@ -42,7 +42,7 @@
       <b-message class="buttons" v-if="assessedProposals.length > 0">
         <b-button icon-left="download" type="is-primary is-light" @click="exportAssessments">Export assessments</b-button>
         <b-button
-          icon-left="delete" type="is-danger"
+          icon-left="delete" type="is-danger is-light"
           @click="confirmClear">Clear local database</b-button>
       </b-message>
     </div>

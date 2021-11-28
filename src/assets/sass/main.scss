@@ -2,12 +2,22 @@
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
-$primary: #263560;
+$white: #ffffff;
+$primary: #28375E;
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
-$primary-invert: findColorInvert($primary);
+$primary-invert: $white;
 $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
+$link: #3F68CC;
+$success: #33A13B;
+$warning: #EDAB0C;
+$danger: #DE1461;
+$text: #202c4b;
+$content-heading-color: $text;
+$label-color: $text;
+$title-color: $text;
+$subtitle-color: $text;
 
 // Lists and maps
 $custom-colors: null !default;
@@ -73,10 +83,13 @@ $colors: mergeColorMaps(
 );
 
 // Links
-$link: $primary;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
+$link-invert: findColorInvert($link);
+$link-focus-border: $link;
 
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+.rate .rate-item.set-on .icon, .rate .rate-item.set-half .is-half {
+  color: #ffd970;
+}

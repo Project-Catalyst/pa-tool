@@ -9,7 +9,7 @@
           {{proposal.title}}
         </router-link>
         <div class="no">
-          No. assessments: {{proposal.no_assessments}}
+          No. assessments: {{no_ass}}
         </div>
       </div>
       <div class="column is-2">
@@ -19,7 +19,7 @@
             size="is-small"
             :href="proposal.url"
             icon-left="link"
-            type="is-primary"
+            type="is-link"
             target="_blank">
             Open in IdeaScale
           </b-button>
@@ -52,6 +52,9 @@ export default {
         }
       }
       return ''
+    },
+    no_ass() {
+      return this.proposal.no_assessments || 0
     }
   },
   methods: {

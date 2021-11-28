@@ -47,7 +47,7 @@
             tag="a"
             :href="proposal.url"
             icon-left="eye"
-            type="is-primary is-medium"
+            type="is-link is-medium"
             target="blank">
             {{ ctaText }}
           </b-button>

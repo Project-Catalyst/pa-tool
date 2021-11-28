@@ -14,13 +14,13 @@
             <counter :d="toAssess.d" :h="toAssess.h" :m="toAssess.m" :s="toAssess.s" />
             <span class="is-size-4 has-text-weight-bold">{{ fAssessStart }} UTC</span>
           </div>
-          <div class="subtitle mt-4">
+          </div>
+        <footer class="modal-card-foot">
+          <b-button label="Close" @click="modalActivable = false" />
+          <div class="subtitle ml-6">
             In the meantime take a look at the <a href="https://cardanocataly.st/en/community-advisor/guide.html" target="_blank">
               CA Assessment Guide</a>.
           </div>
-        </div>
-        <footer class="modal-card-foot">
-          <b-button label="Close" @click="modalActivable = false" />
         </footer>
       </div>
     </div>
