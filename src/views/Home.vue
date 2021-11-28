@@ -2,28 +2,22 @@
   <div class="home">
     <b-message>
       <p class="mb-1">
-        This is a tool created from need. A way for Community Advisors (CA) to
-        be assigned a proposal and to keep track of the proposals already
-        assessed.
+        This is a community made tool to assist with the facilitation of the Community Advisor (CA) assessment process. It allows CAs to be assigned a proposal and to keep track of the overall proposals already assessed.
       </p>
       <p><b>How it works</b></p>
       <p>
-        <b>By clicking the button "Suggest Proposal"</b> below, the system will suggest a proposal with a low number of
-        assessments, based on the challenge filter that you have selected.
+        <b>By clicking the "Suggest Proposal" button</b> the system will suggest a proposal with a low number of assessments. If it interests you you can assess it, or you can click the button again and it'll provide you with another low assessed proposal. You can also adjust which challenges you will see by adjusting the filter that you select.
       </p>
       <p>
-        Data is updated periodically from feeds from Ideascale to refresh the
-        list.
+        Data from a feed from Ideascale is used to refresh the information in this tool periodically.
       </p>
       <p class="mb-1">
-        Using the "Proposal reviewed" checkbox you can keep track of the proposal
-        that you've already assessed. The "assessed proposals" will appear on
-        the bottom of the screen.
+        Using the "I confirm that I have submitted my assessments into Ideascale." checkbox you can keep track of the proposal that you've already assessed. The number will appear in "My assessments" on the top right.
       </p>
       <p>
         <strong>Disclaimer</strong>: the data about the assessment count is
         <strong>not updated</strong> in real time and therefore is likely
-        different from those shown in IdeaScale.
+        different from those shown in IdeaScale - it also includes blanks.
       </p>
     </b-message>
     <b-message type="is-info" has-icon>

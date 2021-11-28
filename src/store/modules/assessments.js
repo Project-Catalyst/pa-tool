@@ -40,6 +40,9 @@ const getters = {
       return getters.indexed[id]
     }
     return false
+  },
+  assessedCount: (state) => {
+    return state.all.length
   }
 }
 

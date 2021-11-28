@@ -22,7 +22,7 @@
           Example Assessments
         </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'Assessed' }">
-          My Assessments
+          {{myAssessmentsLink}}
         </b-navbar-item>
         <b-navbar-dropdown right label="CA Resources">
           <b-navbar-item tag="a" target="_blank" href="https://docs.google.com/document/d/16aq9dNudJ5S3TEVQhBgRznTCoaF8SQezyActtVhec8E">
@@ -83,11 +83,19 @@
 <script>
 
 
+import { mapGetters } from "vuex";
 import Landing from '@/views/Landing'
 
 export default {
   components: {
     Landing
+  },
+  computed: {
+    ...mapGetters("assessments", ["assessedCount"]),
+    ...mapGetters("filters", ["totalProposals"]),
+    myAssessmentsLink() {
+      return `My Assessments (${this.assessedCount}/${this.totalProposals})`
+    },
   },
   methods: {
     next() {

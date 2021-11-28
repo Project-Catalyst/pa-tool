@@ -42,7 +42,10 @@ const getters = {
       )
   },
   totalCount: (state) => {
-    return state.proposals.reduce((n, {no_assessments}) => n + no_assessments, 0)
+    return state.proposals.reduce((n, {no_assessments}) => n + (no_assessments || 0), 0)
+  },
+  totalProposals: (state) => {
+    return state.proposals.length
   }
 }
 

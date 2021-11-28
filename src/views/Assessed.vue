@@ -74,8 +74,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters("assessments", ["ids", "indexed"]),
-    ...mapGetters("filters", ["totalCount"]),
+    ...mapGetters("assessments", ["ids", "indexed", "assessedCount"]),
+    ...mapGetters("filters", ["totalCount", "totalProposals"]),
     assessedProposals() {
       return this.proposals.filter(p => (this.ids.indexOf(p.id) > -1))
         .map((p) => {
@@ -83,7 +83,7 @@ export default {
         })
     },
     headerText() {
-      return `My Assessments (${this.assessedProposals.length}/${this.proposals.length})`
+      return `My Assessments (${this.assessedCount}/${this.totalProposals})`
     },
     subheaderText() {
       return `Total assessments submitted in IdeaScale (${this.totalCount}/${this.proposals.length * this.goalAssPerProposal})`
