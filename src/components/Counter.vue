@@ -1,5 +1,7 @@
 <template>
-  <div class="counter has-text-bold is-flex is-justify-content-center is-family-monospace">
+  <div :class="{small: small, 'is-family-monospace': !small}"
+    class="counter has-text-bold is-flex is-justify-content-center ">
+    <span v-if="text" class="text">{{text}}</span>
     <span class="days">{{pd}}</span>
     <span class="unit">days</span>
     <span class="hours">{{ph}}</span>
@@ -16,7 +18,7 @@
 
 export default {
   name: 'Counter',
-  props: ['d', 'h', 'm', 's'],
+  props: ['d', 'h', 'm', 's', 'small', 'text'],
   methods: {
     pad(s) {
       if(String(s).length === 1) {
@@ -42,11 +44,18 @@ export default {
 }
 </script>
 <style lang="scss">
-.counter {
+.counter:not(.small) {
   font-size: 7vw;
   line-height: 7vw;
   .unit {
     font-size: 3vw;
+  }
+}
+.counter.small {
+  span {
+    &.text, &.unit {
+      margin-right: 4px;
+    }
   }
 }
 </style>

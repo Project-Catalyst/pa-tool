@@ -5,8 +5,8 @@
         <b-navbar-item tag="router-link" :to="{ name: 'Home' }">
           <img src="@/assets/images/catalyst.png" alt="Project Catalyst" />
         </b-navbar-item>
-        <b-navbar-item class="has-text-weight-bold" tag="a" target="_blank" href="https://cardanoscan.io/pool/b61f05ec1e907ab9b069eaec6c664056c16f56cab59076109c66d2ae">
-          Stake with [AIM] pool
+        <b-navbar-item class="has-text-weight-bold">
+          <counter v-if="secsToAssess < 0 && secsToEndAssess > 0" :text="'End of Assess Stage:'" :small="true" :d="toEndAssess.d" :h="toEndAssess.h" :m="toEndAssess.m" :s="toEndAssess.s" />
         </b-navbar-item>
       </template>
       <template #end>
@@ -85,10 +85,20 @@
 
 import { mapGetters } from "vuex";
 import Landing from '@/views/Landing'
+import Counter from '@/components/Counter'
 
 export default {
+  data() {
+    return {
+      assessStartsUTC: this.$dayjs.utc('2021-12-09 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      assessEndsUTC: this.$dayjs.utc('2021-12-16 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      now: this.$dayjs().utc().unix(),
+      interval: false
+    }
+  },
   components: {
-    Landing
+    Landing,
+    Counter
   },
   computed: {
     ...mapGetters("assessments", ["assessedCount"]),
@@ -96,11 +106,37 @@ export default {
     myAssessmentsLink() {
       return `My Assessments (${this.assessedCount}/${this.totalProposals})`
     },
+    secsToAssess() {
+      return this.assessStartsUTC.unix() - this.now
+    },
+    secsToEndAssess() {
+      return this.assessEndsUTC.unix() - this.now
+    },
+    toEndAssess() {
+      return this.getDuration(this.secsToEndAssess)
+    },
   },
   methods: {
+    getNow() {
+      this.now = this.$dayjs().utc().unix()
+    },
+    getDuration(time) {
+      let duration = this.$dayjs.duration(time, "seconds")
+      return {
+        d: duration.days(),
+        h: duration.hours(),
+        m: duration.minutes(),
+        s: duration.seconds()
+      }
+    },
     next() {
       this.$store.dispatch('filters/getNext', false)
     }
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.getNow()
+    }, 1000)
   }
 }
 </script>

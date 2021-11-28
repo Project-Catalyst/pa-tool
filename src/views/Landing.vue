@@ -42,7 +42,8 @@ export default {
       registrationStartsUTC: this.$dayjs.utc('2021-12-02 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
       assessStartsUTC: this.$dayjs.utc('2021-12-09 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
       now: this.$dayjs().utc().unix(),
-      modalActivable: true
+      modalActivable: true,
+      interval: false
     }
   },
   methods: {
@@ -83,9 +84,12 @@ export default {
     }
   },
   mounted() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.getNow()
     }, 1000)
+  },
+  destroyed() {
+    clearInterval(this.interval)
   }
 }
 </script>
