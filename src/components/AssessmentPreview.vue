@@ -10,19 +10,19 @@
           <b-button
             tag="a"
             size="is-small"
+            icon-left="pencil"
+            @click="open = !open"
+            type="is-primary">
+            {{editMsg}}
+          </b-button>
+          <b-button
+            tag="a"
+            size="is-small"
             :href="proposal.url"
             icon-left="link"
             type="is-link"
             target="_blank">
             Open in IdeaScale
-          </b-button>
-          <b-button
-            tag="a"
-            size="is-small"
-            icon-left="pencil"
-            @click="open = !open"
-            type="is-primary">
-            {{editMsg}}
           </b-button>
         </div>
       </div>
