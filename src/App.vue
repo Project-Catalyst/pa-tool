@@ -5,8 +5,8 @@
         <b-navbar-item tag="router-link" :to="{ name: 'Home' }">
           <img src="@/assets/images/catalyst.png" alt="Project Catalyst" />
         </b-navbar-item>
-        <b-navbar-item class="has-text-weight-bold">
-          <counter v-if="secsToAssess < 0 && secsToEndAssess > 0" :text="'End of Assess Stage:'" :small="true" :d="toEndAssess.d" :h="toEndAssess.h" :m="toEndAssess.m" :s="toEndAssess.s" />
+        <b-navbar-item class="has-text-weight-bold" v-if="secsToAssess < 0 && secsToEndAssess > 0">
+          <counter :text="'End of Assess Stage:'" :small="true" :d="toEndAssess.d" :h="toEndAssess.h" :m="toEndAssess.m" :s="toEndAssess.s" />
         </b-navbar-item>
       </template>
       <template #end>
