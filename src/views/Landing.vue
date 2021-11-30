@@ -3,7 +3,7 @@
     <div class="countdown">
       <div class="modal-card" style="width: auto">
         <div class="modal-card-body has-text-centered">
-          <div class="title mb-6">Project Catalyst Fund7 Assess Stage<br />has not started yet!</div>
+          <div class="title mb-6">Project Catalyst Fund7 Assess Stage<br />has not started yet!<br />Use the tool for testing!</div>
           <div class="counter-box mb-6" v-if="secsToRegistration > 0">
             <span class="is-size-4 has-text-weight-bold">Community Advisors registrations starts in: </span>
             <counter :d="toReg.d" :h="toReg.h" :m="toReg.m" :s="toReg.s" />

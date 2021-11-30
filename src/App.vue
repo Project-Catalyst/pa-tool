@@ -43,7 +43,8 @@
     <div class="section container">
       <div class="content-wrapper">
         <b-message type="is-warning">
-          This is a preview of the CA-tool for Fund 7. Data from proposals and CA Resourses are not updated yet!
+          This is a preview of the CA-tool for Fund 7. Data from proposals and CA Resources are not final!<br />
+          The assess stage will start on <b>09 Dec 2021 11:00 UTC</b> but you can navigate and use the tool to get familiar with it and test it.
         </b-message>
         <router-view/>
       </div>
