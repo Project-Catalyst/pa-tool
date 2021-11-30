@@ -6,10 +6,10 @@
       </header>
       <section class="modal-card-body">
         <b-message  type="is-info" class="is-size-6">
-          This checklist is designed to help you provide better quality assessments and feedback to the proposer. It is not mandatory, however using it can help give you an indication of how well you've applied the guidelines to your assessment.
+          This non-mandatory community created checklist is designed to help you provide better quality assessments and feedback to the proposer and information to voters. Using it can provide direction and topics to cover to improve the quality of your assessments.
         </b-message>
         <div class="form-group mb-3">
-          <h3 class="mb-2 has-text-weight-bold">{{criterium.title}}</h3>
+          <h3 class="mb-2 has-text-weight-bold">{{criterium.title}} - {{criterium.question}}</h3>
           <div class="block mb-1" v-for="question,idx2 in criterium.questions" :key="`q-${idx2}`">
             <b-checkbox class="mb-1" v-model="selectedKeys" :native-value="question">
               {{ question }}

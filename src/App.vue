@@ -42,6 +42,9 @@
     </b-navbar>
     <div class="section container">
       <div class="content-wrapper">
+        <b-message type="is-warning">
+          This is a preview of the CA-tool for Fund 7. Data from proposals and CA Resourses are not updated yet!
+        </b-message>
         <router-view/>
       </div>
     </div>
