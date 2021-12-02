@@ -9,7 +9,7 @@
             <counter :d="toReg.d" :h="toReg.h" :m="toReg.m" :s="toReg.s" />
             <span class="is-size-4 has-text-weight-bold">{{ fRegistrationsStart }} UTC</span>
           </div>
-          <div class="counter-box" v-if="secsToRegistration > 0">
+          <div class="counter-box" v-if="secsToAssess > 0">
             <span class="is-size-4 has-text-weight-bold">Assess Stage starts in: </span>
             <counter :d="toAssess.d" :h="toAssess.h" :m="toAssess.m" :s="toAssess.s" />
             <span class="is-size-4 has-text-weight-bold">{{ fAssessStart }} UTC</span>
