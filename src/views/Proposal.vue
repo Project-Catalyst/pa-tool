@@ -1,7 +1,15 @@
 <template>
   <div class="proposal">
     <c-filter :categories="categories" />
-    <div class="content box">
+    <div class="content box" :class="{'has-background-primary-light': isChallengeSetting}">
+      <b-notification
+      v-if="isChallengeSetting"
+        type="is-warning is-light"
+        aria-close-label="Close notification"
+        role="alert">
+          This is a <i>Challenge Setting Proposal</i>. There is an <b>important</b> distinction between <i>Proposals for Funding</i> and <i>Challenge Setting Proposals</i>. These help guide the direction of Catalyst development and will form the challenges that appear in the next fund. Voters will assess their importance in relation to the next fund Challenge Setting Strategic Goals and consider what sort of <i>Proposals for Funding</i> they will encourage.<br />
+          Learn more about what <i>Challenge Setting</i> is about from this video <a href="https://youtu.be/nP0r5KwNtQk?t=4790" target="_blank">https://youtu.be/nP0r5KwNtQk?t=4790</a>
+      </b-notification>
       <div class="is-flex is-align-items-center">
         <h5 class="mr-5 mb-0">{{category.title}}</h5>
         <a class="has-text-weight-bold is-text-6" @click="briefActive = true">
@@ -36,7 +44,7 @@
       <div>
         No. assessments: <b>{{(proposal.no_assessments) ? proposal.no_assessments : 0}}</b><br />
         <span class="is-size-7" v-if="lastUpdate">
-          Last update: {{fLastUpdateDuration}} [{{ fLastUpdate }}]
+          Stats last update: {{fLastUpdateDuration}} [{{ fLastUpdate }}]
         </span>
       </div>
     </div>
@@ -154,7 +162,7 @@ export default {
     },
     isChallengeSetting() {
       if (this.category) {
-        if (this.category.id === 26120) {
+        if (this.category.id === 26257) {
           return true
         }
       }

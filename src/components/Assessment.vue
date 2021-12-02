@@ -104,21 +104,21 @@
           </b-button>
         </div>
       </div>
+      <b-field>
+        <b-tooltip multilined type="is-primary is-light" class="mr-4" :active="completed !== 100">
+          <b-checkbox
+            class="mb-4 has-text-weight-bold is-size-5"
+            :disabled="completed !== 100"
+            v-model="submitted"
+            v-if="assessment">
+            Confirm that you submitted the Assessment to IdeaScale.<br />I have copied any content created here into Ideascale.
+          </b-checkbox>
+          <template v-slot:content>
+            You have to complete the assessment (fill all the ratings and all the rationales) before confirming that you submitted it to IdeaScale
+          </template>
+        </b-tooltip>
+      </b-field>
     </div>
-    <b-field>
-      <b-tooltip multilined type="is-primary is-light" class="mr-4" :active="completed !== 100">
-        <b-checkbox
-          class="mb-4 has-text-weight-bold is-size-5"
-          :disabled="completed !== 100"
-          v-model="submitted"
-          v-if="assessment">
-          Confirm that you submitted the Assessment to IdeaScale.<br />I have copied any content created here into Ideascale.
-        </b-checkbox>
-        <template v-slot:content>
-          You have to complete the assessment (fill all the ratings and all the rationales) before confirming that you submitted it to IdeaScale
-        </template>
-      </b-tooltip>
-    </b-field>
     <b-button
       v-if="assessment"
       @click="deleteAssessment"
