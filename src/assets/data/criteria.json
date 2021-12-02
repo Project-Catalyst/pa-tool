@@ -6,9 +6,12 @@
     "title": "Impact",
     "help": "Lorem ipsum",
     "questions": [
-      "Have you checked if the problem statement defines a problem within the challenge?",
+      "Has the proposer provided a clear and concise description an issue or deficiency in their Problem Statement?",
+      "Have you checked if the problem statement defines a problem within the challenge which needs to be solved?",
       "Have you checked if the proposal has a positive impact on the Cardano/Catalyst ecosystem?",
-      "Do the KPIs indicated in the proposal match the ones indicated in the challenge? If not, how relevant are the indicated KPIs to this particular challenge?"
+      "Have you checked if the proposal clearly articulates how it will add value to the Cardano/Catalyst ecosystem?",
+      "Do the KPIs indicated in the proposal match the ones indicated in the challenge? If not, how relevant are the indicated KPIs to this particular challenge?",
+      "Is the proposal able to scale to address future challenges?"
     ]
   },
   {
@@ -18,9 +21,17 @@
     "title": "Feasibility",
     "help": "Lorem ipsum",
     "questions": [
-      "Have you checked if the proposer's team has relevant experience and/or references?",
+      "Does the proposer give account of what experience/skill sets will be necessary to deliver on the proposal?",
+      "Have you checked if the proposer provided evidence (references, links, etc.) of relevant skills and experience needed to implement the proposal?",
+      "Does the proposer knows, in an identifiable manner, the type and number of team members required to implement the proposal?",
+      "Is the budget outlined clearly, understandable and broken down into identifiable items?",
+      "Is the budget reasonable to achieve the set goals?",
+      "If additional funding is required to implement the proposal, has the proposer provided a verifiable plan in this regard?",
       "Have you checked if there is a detailed implementable plan?",
-      "Have you checked if the budget is understandable and reasonable?",
+      "Have details of actionable tasks and order of execution been communicated?",
+      "Does the proposal offer a realistic timetable to complete the work?",
+      "Does the plan describe the resources necessary to implement the proposal?",
+      "Does the proposal clearly explains technical aspects like architecture, language and technologies if they are crucial for implementation?",
       "Have you checked that the proposers have indicated some awareness of the risks to the project and have given some indication of how they will mitigate them?"
     ]
   },
@@ -28,10 +39,12 @@
     "c_id": 3,
     "challenges": [26233, 26234, 26235, 26236, 26237, 26238, 26239, 26240, 26241, 26242, 26243, 26244, 26245, 26246, 26247, 26248, 26249, 26250, 26251, 26252, 26253, 26254, 26255, 26256],
     "question": "The information provided is sufficient to audit the progress and the success of the proposal.",
-    "title": "Clarity",
+    "title": "Clarity/Auditability",
     "help": "Lorem ipsum",
     "questions": [
-      "Have you checked if metrics / KPIs are presented and make sense?",
+      "Does the proposal provide a roadmap with milestones and a time horizon for achievement?",
+      "Have you checked if metrics / KPIs (Key Performance Indicators) that define the success of the proposal are presented and make sense?",
+      "Can the KPIs provided be used to quantify success of the project?",
       "Have you checked if the community can track the progress of the proposal?"
     ]
   },
@@ -54,7 +67,8 @@
     "help": "Lorem ipsum",
     "questions": [
       "Is it a challenge that welcomes a wide variety of solutions?",
-      "Is it reasonable to expect proposals that show results in the next six months or so?"
+      "Is it reasonable to expect proposals that show results in the next six months or so?",
+      "Is the Challenge Team in place or is there a plan to create one?"
     ]
   },
   {
@@ -64,8 +78,7 @@
     "title": "Verifiability",
     "help": "Lorem ipsum",
     "questions": [
-      "Are the metrics measuring outcomes (correct) or outlining means to an end (incorrect)?",
-      "Is the Challenge Team in place or is there a plan to create one?"
+      "Are the metrics measuring outcomes (correct) or outlining means to an end (incorrect)?"
     ]
   },
   {

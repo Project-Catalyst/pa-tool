@@ -6,7 +6,7 @@
       </header>
       <section class="modal-card-body">
         <b-message  type="is-info" class="is-size-6">
-          This non-mandatory community created checklist is designed to help you provide better quality assessments and feedback to the proposer and information to voters. Using it can provide direction and topics to cover to improve the quality of your assessments.
+          This non-mandatory community created checklist is designed to help you provide better quality assessments and feedback to the proposer and information to voters. Using it can provide direction and topics to cover to improve the quality of your assessments. Not all checks need to be present to have a great proposal, use your own judgment and this as a guide.
         </b-message>
         <div class="form-group mb-3">
           <h3 class="mb-2 has-text-weight-bold">{{criterium.title}} - {{criterium.question}}</h3>
