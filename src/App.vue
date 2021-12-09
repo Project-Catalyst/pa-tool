@@ -28,8 +28,8 @@
           <b-navbar-item tag="a" target="_blank" href="https://docs.google.com/document/d/16aq9dNudJ5S3TEVQhBgRznTCoaF8SQezyActtVhec8E">
             Onboarding document
           </b-navbar-item>
-          <b-navbar-item tag="a" target="_blank" href="https://vimeo.com/600295406">
-            Tutorial for CAs
+          <b-navbar-item tag="a" target="_blank" href="https://www.youtube.com/playlist?list=PLDLKmC_jWczVff7Gv6J5nmKLl52mVCT9q">
+            Catalyst School workshops for CAs
           </b-navbar-item>
           <b-navbar-item tag="a" target="_blank" href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU">
             Assessment Guide
