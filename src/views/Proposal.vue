@@ -20,8 +20,8 @@
       <div class="mb-4">
         <h4 class="mb-1" v-if="!isChallengeSetting">Problem statement (max 140 char)</h4>
         <h4 class="mb-1" v-if="isChallengeSetting">Challenge question (max 140 char)</h4>
-        <p v-if="proposal.problem_statement">{{proposal.problem_statement}}</p>
-        <p v-if="proposal.challenge_brief">{{proposal.challenge_brief}}</p>
+        <p v-if="!isChallengeSetting">{{proposal.description}}</p>
+        <p v-if="isChallengeSetting">{{proposal.description}}</p>
       </div>
       <div class="mb-4" v-if="proposal.problem_solution">
         <h4 class="mb-1">Problem solution (max 140 char)</h4>
