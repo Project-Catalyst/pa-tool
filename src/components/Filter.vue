@@ -89,7 +89,7 @@ export default {
       this.filteredChallenges = [{
         title: "All",
         id: 0,
-        count: 711
+        count: 944
       }, ...filteredChallenges]
     }
   },
