@@ -19,7 +19,7 @@ const state = getDefaultState()
 // getters
 const getters = {
   filteredProposals: (state, _, rootState, rootGetters) => {
-    let lproposals = JSON.parse(JSON.stringify(staticProposals))
+    let lproposals = state.proposals
     if (state.selectedChallenges.length > 0) {
       let filters = state.selectedChallenges.map(el => el.id)
       if (filters.indexOf(0) === -1) {
