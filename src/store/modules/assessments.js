@@ -53,7 +53,6 @@ const actions = {
 // mutations
 const mutations = {
   setAssessments (state, assessments) {
-    console.log(assessments)
     state.all = assessments
   },
   addAssessment (state, proposalId) {

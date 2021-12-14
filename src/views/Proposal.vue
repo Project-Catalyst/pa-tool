@@ -17,6 +17,7 @@
         </a>
       </div>
       <h1>{{proposal.title}}</h1>
+      <h6><span class="has-text-weight-normal">Author:</span> {{proposal.author}}</h6>
       <div class="mb-4">
         <h4 class="mb-1" v-if="!isChallengeSetting">Problem statement (max 140 char)</h4>
         <h4 class="mb-1" v-if="isChallengeSetting">Challenge question (max 140 char)</h4>
@@ -85,7 +86,7 @@
 
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import categories from '../assets/data/categories.json'
 import proposals from '../assets/data/proposals.json'
 import CFilter from '@/components/Filter'
@@ -115,12 +116,9 @@ export default {
     ...mapState({
       lastUpdate: (state) => state.filters.lastUpdate
     }),
+    ...mapGetters("filters", ["getById"]),
     proposal() {
-      let filtered = this.proposals.filter(p => (p.id === parseInt(this.$route.params.id)))
-      if (filtered.length) {
-        return filtered[0]
-      }
-      return filtered
+      return this.getById(parseInt(this.$route.params.id))
     },
     category() {
       if (this.proposal) {

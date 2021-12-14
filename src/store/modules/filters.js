@@ -46,7 +46,14 @@ const getters = {
   },
   totalProposals: (state) => {
     return state.proposals.length
-  }
+  },
+  getById: (state) => (id) => {
+    let filtered = state.proposals.filter(p => (p.id === id))
+    if (filtered.length) {
+      return filtered[0]
+    }
+    return false
+  },
 }
 
 // actions
