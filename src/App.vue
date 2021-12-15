@@ -91,7 +91,7 @@ export default {
   data() {
     return {
       assessStartsUTC: this.$dayjs.utc('2021-12-09 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
-      assessEndsUTC: this.$dayjs.utc('2021-12-16 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      assessEndsUTC: this.$dayjs.utc('2021-12-16 17:00:00', 'YYYY-MM-DD HH:mm:ss'),
       now: this.$dayjs().utc().unix(),
       interval: false
     }
