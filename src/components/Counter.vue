@@ -45,8 +45,8 @@ export default {
 </script>
 <style lang="scss">
 .counter:not(.small) {
-  font-size: 7vw;
-  line-height: 7vw;
+  font-size: 5vw;
+  line-height: 5vw;
   .unit {
     font-size: 3vw;
   }

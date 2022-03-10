@@ -39,8 +39,8 @@ export default {
   },
   data() {
     return {
-      registrationStartsUTC: this.$dayjs.utc('2021-12-02 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
-      assessStartsUTC: this.$dayjs.utc('2021-12-09 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      registrationStartsUTC: this.$dayjs.utc('2022-03-10 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      assessStartsUTC: this.$dayjs.utc('2022-03-17 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
       now: this.$dayjs().utc().unix(),
       modalActivable: true,
       interval: false
