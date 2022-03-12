@@ -1,7 +1,7 @@
 <template>
   <div class="proposals">
     <p class="title">Proposals List</p>
-    <c-filter :categories="categories" />
+    <c-filter :categories="categories" :tags="tags" />
     <div class="content box">
       <proposal-preview
         :proposal="proposal"
@@ -17,13 +17,15 @@ import { mapGetters } from "vuex";
 import CFilter from '@/components/Filter'
 import ProposalPreview from '@/components/ProposalPreview'
 import proposals from '../assets/data/proposals.json'
+import tags from '../assets/data/tags.json'
 import categories from '../assets/data/categories.json'
 
 export default {
   data() {
     return {
       proposals: proposals,
-      categories: categories
+      categories: categories,
+      tags: tags
     }
   },
   components: {
