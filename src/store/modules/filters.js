@@ -11,6 +11,7 @@ const getDefaultState = () => ({
   currentIndex: 0,
   keyword: '',
   selectedChallenges: [allChallenge],
+  selectedTags: [],
   proposals: staticProposals,
   lastUpdate: false
 })
@@ -25,6 +26,10 @@ const getters = {
       if (filters.indexOf(0) === -1) {
         lproposals = lproposals.filter(p => filters.indexOf(p.category) > -1)
       }
+    }
+    if (state.selectedTags.length > 0) {
+      let tagFilters = state.selectedTags.map(el => el.title)
+      lproposals = lproposals.filter(proposal => proposal?.tags ? tagFilters.every(tag => proposal.tags.includes(tag)) : false)
     }
     let locAssessmentsIds = rootGetters['assessments/ids']
     if (locAssessmentsIds.length > 0) {
@@ -135,6 +140,17 @@ const mutations = {
         state.selectedChallenges.push(allChallenge)
       }
     }
+    this.dispatch('filters/getNext', true)
+  },
+  addTag(state, tag) {
+    state.currentIndex = 0
+    state.selectedTags.push(tag)
+    this.dispatch('filters/getNext', true)
+  },
+  removeTag(state, tag) {
+    state.currentIndex = 0
+    var found = state.selectedTags.filter((selectedTag) => tag.title !== selectedTag.title)
+    state.selectedTags = found
     this.dispatch('filters/getNext', true)
   },
   setKeyword(state, keyword) {
