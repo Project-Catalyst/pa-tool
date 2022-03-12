@@ -24,6 +24,7 @@
             There are no items
         </template>
     </b-taginput>
+
     <b-field class="mt-3" label="Filter by title">
       <b-input placeholder="Search for (min 3 char)..."
         type="search"
@@ -32,6 +33,30 @@
         v-model="keyword">
       </b-input>
     </b-field>
+
+    <label class="mb-2 is-flex is-flex-wrap-wrap">
+      <span class="has-text-weight-bold mr-3">Filter proposals by tag:</span>
+    </label>
+    <b-taginput
+        ref="tagInput"
+        :value="selectedTags"
+        :data="filteredTags"
+        icon="label"
+        field="title"
+        autocomplete
+        :open-on-focus="true"
+        placeholder="Select a tag"
+        max-height="450px"
+        @add="selectTag"
+        @remove="unselectTag"
+        @typing="getFilteredTags">
+        <template v-slot="props">
+          {{props.option.title}}
+        </template>
+        <template #empty>
+            There are no tags
+        </template>
+    </b-taginput>
 </div>
 </template>
 
@@ -43,15 +68,17 @@ import { mapState } from "vuex";
 
 export default {
   name: 'CFilter',
-  props: ['categories'],
+  props: ['categories', 'tags'],
   data() {
     return {
-      filteredChallenges: []
+      filteredChallenges: [],
+      filteredTags: []
     }
   },
   computed: {
     ...mapState({
       selectedChallenges: (state) => state.filters.selectedChallenges,
+      selectedTags: (state) => state.filters.selectedTags,
     }),
     keyword: {
       get() {
@@ -70,6 +97,12 @@ export default {
     },
     unselectChallenge(challenge) {
       this.$store.commit('filters/removeChallenge', challenge)
+    },
+    selectTag(tag) {
+      this.$store.commit('filters/addTag', tag)
+    },
+    unselectTag(tag) {
+      this.$store.commit('filters/removeTag', tag)
     },
     clearFilter() {
       this.$store.commit('filters/resetState')
@@ -91,10 +124,23 @@ export default {
         id: 0,
         count: 944
       }, ...filteredChallenges]
+    },
+    getFilteredTags(text) {
+      if (text) {
+        this.filteredTags = this.tags.filter((option) => {
+          return option.title
+              .toString()
+              .toLowerCase()
+              .indexOf(text.toLowerCase()) >= 0
+        })
+      } else {
+        this.filteredTags = this.tags
+      }
     }
   },
   mounted() {
     this.getFilteredChallenges()
+    this.getFilteredTags()
   }
 }
 </script>

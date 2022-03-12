@@ -1,6 +1,6 @@
 <template>
   <div class="proposal">
-    <c-filter :categories="categories" />
+    <c-filter :categories="categories" :tags="tags" />
     <div class="content box" :class="{'has-background-primary-light': isChallengeSetting}">
       <b-notification
       v-if="isChallengeSetting"
@@ -88,6 +88,7 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import categories from '../assets/data/categories.json'
+import tags from '../assets/data/tags.json'
 import proposals from '../assets/data/proposals.json'
 import CFilter from '@/components/Filter'
 import Assessment from '@/components/Assessment'
@@ -99,6 +100,7 @@ export default {
   data() {
     return {
       categories: categories,
+      tags: tags,
       proposals: proposals,
       assessed: [],
       autoflag: false,
