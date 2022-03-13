@@ -1,11 +1,8 @@
 import router from '@/router'
 import staticProposals from '@/assets/data/proposals.json'
+import categoriesJson from '@/assets/data/f8/categories.json'
 
-const allChallenge = {
-  title: "All",
-  id: 0,
-  count: 944
-}
+const allChallenge = categoriesJson[0]
 // initial state
 const getDefaultState = () => ({
   currentIndex: 0,
@@ -24,7 +21,7 @@ const getters = {
     if (state.selectedChallenges.length > 0) {
       let filters = state.selectedChallenges.map(el => el.id)
       if (filters.indexOf(0) === -1) {
-        lproposals = lproposals.filter(p => filters.indexOf(p.category) > -1)
+        lproposals = lproposals.filter(proposal => filters.includes(proposal.category))
       }
     }
     if (state.selectedTags.length > 0) {

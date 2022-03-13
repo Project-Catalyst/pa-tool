@@ -119,11 +119,7 @@ export default {
       } else {
         filteredChallenges = this.categories
       }
-      this.filteredChallenges = [{
-        title: "All",
-        id: 0,
-        count: 944
-      }, ...filteredChallenges]
+      this.filteredChallenges = [...filteredChallenges]
     },
     getFilteredTags(text) {
       if (text) {
