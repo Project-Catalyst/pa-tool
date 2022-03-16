@@ -145,7 +145,7 @@ const mutations = {
   },
   removeTag(state, tag) {
     state.currentIndex = 0
-    var found = state.selectedTags.filter((selectedTag) => tag.title !== selectedTag.title)
+    var found = state.selectedTags.filter((selectedTag) => tag !== selectedTag)
     state.selectedTags = found
     this.dispatch('filters/getNext', true)
   },
