@@ -1,4 +1,4 @@
-import categories from '@/assets/data/categories.json'
+import categories from '@/assets/data/f8/categories.json'
 
 import { mapState, mapGetters } from "vuex";
 

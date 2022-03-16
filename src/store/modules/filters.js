@@ -1,5 +1,5 @@
 import router from '@/router'
-import staticProposals from '@/assets/data/proposals.json'
+import staticProposals from '@/assets/data/f8/proposals.json'
 import categoriesJson from '@/assets/data/f8/categories.json'
 
 const allChallenge = categoriesJson[0]
@@ -25,8 +25,7 @@ const getters = {
       }
     }
     if (state.selectedTags.length > 0) {
-      let tagFilters = state.selectedTags.map(el => el.title)
-      lproposals = lproposals.filter(proposal => proposal?.tags ? tagFilters.every(tag => proposal.tags.includes(tag)) : false)
+      lproposals = lproposals.filter(proposal => proposal?.tags ? state.selectedTags.every(tag => proposal.tags.includes(tag)) : false)
     }
     let locAssessmentsIds = rootGetters['assessments/ids']
     if (locAssessmentsIds.length > 0) {
