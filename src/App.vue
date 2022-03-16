@@ -134,6 +134,15 @@ export default {
     }
   },
   mounted() {
+    if (window.localStorage) {
+      let oldKeys = ['ca-tool-default']
+      oldKeys.forEach((k) => {
+        let oldKey = window.localStorage.getItem(k)
+        if (oldKey) {
+          window.localStorage.removeItem(k)
+        }
+      })
+    }
     this.interval = setInterval(() => {
       this.getNow()
     }, 1000)
