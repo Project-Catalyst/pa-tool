@@ -7,6 +7,9 @@
         :proposal="proposal"
         :key="`proposal-${proposal.id}`"
         v-for="proposal in filteredProposals" />
+      <p class="is-size-4" v-if="filteredProposals.length === 0">
+        No results for current selection. Please adjust the filter criteria.
+      </p>
     </div>
   </div>
 </template>
