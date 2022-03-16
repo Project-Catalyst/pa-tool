@@ -31,7 +31,7 @@
 
 <script>
 
-import categories from '../assets/data/categories.json'
+import categories from '../assets/data/f8/categories.json'
 
 export default {
   name: 'ProposalPreview',

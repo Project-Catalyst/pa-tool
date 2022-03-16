@@ -21,16 +21,16 @@
       <div class="mb-4">
         <h4 class="mb-1" v-if="!isChallengeSetting">Problem statement (max 140 char)</h4>
         <h4 class="mb-1" v-if="isChallengeSetting">Challenge question (max 140 char)</h4>
-        <p v-if="!isChallengeSetting">{{proposal.description}}</p>
-        <p v-if="isChallengeSetting">{{proposal.description}}</p>
+        <div v-html="proposal.description" v-if="!isChallengeSetting"></div>
+        <div v-html="proposal.description" v-if="isChallengeSetting"></div>
       </div>
       <div class="mb-4" v-if="proposal.problem_solution">
         <h4 class="mb-1">Problem solution (max 140 char)</h4>
-        <p>{{proposal.problem_solution}}</p>
+        <div v-html="proposal.problem_solution"></div>
       </div>
       <div class="mb-4" v-if="proposal.relevant_experience">
         <h4 class="mb-1">Relevant experience (max 140 char)</h4>
-        <p>{{proposal.relevant_experience}}</p>
+        <div v-html="proposal.relevant_experience"></div>
       </div>
       <div class="mb-4" v-if="proposal.importance">
         <h4 class="mb-1">Why is it important? (max 140 char)</h4>
@@ -87,9 +87,9 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import categories from '../assets/data/categories.json'
+import categories from '../assets/data/f8/categories.json'
 import tags from '../assets/data/tags.json'
-import proposals from '../assets/data/proposals.json'
+import proposals from '../assets/data/f8/proposals.json'
 import CFilter from '@/components/Filter'
 import Assessment from '@/components/Assessment'
 import ChallengeBrief from '@/components/ChallengeBrief'

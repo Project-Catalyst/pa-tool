@@ -51,7 +51,7 @@
         @remove="unselectTag"
         @typing="getFilteredTags">
         <template v-slot="props">
-          {{props.option.title}}
+          {{props.option}}
         </template>
         <template #empty>
             There are no tags
@@ -124,8 +124,7 @@ export default {
     getFilteredTags(text) {
       if (text) {
         this.filteredTags = this.tags.filter((option) => {
-          return option.title
-              .toString()
+          return option
               .toLowerCase()
               .indexOf(text.toLowerCase()) >= 0
         })
