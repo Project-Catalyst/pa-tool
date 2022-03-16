@@ -1,0 +1,41 @@
+{
+    "text": "Can we build an Open Ecosystem to drive growth, give equal opportunities to all, and increase the synergies across Cardano projects?",
+    "tabs": [
+        {
+            "title": "Open standards",
+            "content": "There should be ,It should be possible to have ,We should observe an ,We should observe an"
+        },
+        {
+            "title": "Motivation",
+            "content": "As mentioned by Charles Hoskinson [1] \"Cardano code is Open Source, but needs to be managed like a true open source project, like Linux and other O.S. projects [..]\".,[1] ,In order to proceed in this direction, we need to use"
+        },
+        {
+            "title": "Guiding questions:",
+            "content": "How can we guide the growth of a vendor neutral ecosystem?\n\tHow can we build a common identity and increase awareness on Cardano projects?\n\tHow can we increase the discoverability and the commercial adoption of our projects?\n\tHow can we increase the degree of collaboration across different projects?\n\tHow can we lower the barriers and increase open participation to our ecosystem?\n\tHow can we provide equal opportunities to all projects no matter the size?"
+        },
+        {
+            "title": "Possible directions:",
+            "content": "Incentivize collaboration across projects to solve complex problems\n\tIntroduce common standards and processes and incentivize their adoption across projects\n\tProvide cross-project infrastructures and tools needed to co-ordinate\n\tEnsure the existence of a cohesive knowledge base\n\tSupport a network of professional technology ambassadors"
+        },
+        {
+            "title": "Note",
+            "content": "This challenge builds on top of the existing ,Indeed, this challenge is about establishing standards, processes, and fostering interoperability across O.S. projects, while the \"Open Source\" challenges are more focused on growing the O.S. ecosystem by seed-funding open source projects for future challenges.,Shortly said"
+        },
+        {
+            "title": "References",
+            "content": "[OPSTD] Almeida, Fernando & José, Oliveira & José, Cruz. (2011). Open Standards And Open Source: Enabling Interoperability. International Journal of Software Engineering & Applications. 2. 10.5121/ijsea.2011.2101."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "To deliver complex software, driving collaboration, and accelerating innovation by sharing identity, practices, and sw components/services."
+        },
+        {
+            "title": "What does success look like?",
+            "content": "A vendor-neutral ecosystem to\n\ndrive growth, awareness, discoverability\n\tincrease commercial adoption\n\tprovide needed infrastructures"
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": ""
+        }
+    ]
+}

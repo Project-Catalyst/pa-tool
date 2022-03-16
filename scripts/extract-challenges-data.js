@@ -2,12 +2,14 @@ const INPUT_FILE = "f8-challenges"
 const challengesJson = require(`./${INPUT_FILE}.json`);
 const fs = require('fs');
 
+const allChallengeIds = []
 var extractedEssentialChallengeData = challengesJson.map(challenge => {
     const necessaryFields = {
         id: challenge.id,
         count: challenge.ideaCount,
         title: challenge.name
     }
+    allChallengeIds.push(challenge.id)
     return necessaryFields
 })
 
@@ -20,4 +22,5 @@ const proposalsCountObject = extractedEssentialChallengeData.reduce((prev, curre
 })
 extractedEssentialChallengeData.unshift(proposalsCountObject)
 
+fs.writeFileSync(`./${INPUT_FILE}.challengeIds.extracted.json`, JSON.stringify(allChallengeIds))
 fs.writeFileSync(`./${INPUT_FILE}.extracted.json`, JSON.stringify(extractedEssentialChallengeData))

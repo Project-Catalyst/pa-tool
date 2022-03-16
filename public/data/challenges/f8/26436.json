@@ -1,0 +1,45 @@
+{
+    "text": "How might we create connections and collaboration between Cardano and other blockchains in the next six months?",
+    "tabs": [
+        {
+            "title": "Description",
+            "content": "The success of Bitcoin spawned numerous off-shoot experiments and the arrival of Ethereum increased tribalism. As the number of altcoins grew, unhealthy \"maximalism\" emerged. The future is multi-chain, however, and the cryptoeconomy thrives when interoperability and cross-chain collaboration are cherished and encouraged.,There are multiple next generation blockchains with cadres of zealous supporters, highly skilled developers and innovative technologies that Cardano and Project Catalyst can learn from. And, vice versa, we can help other networks thrive by offering the good practices developed in Catalyst. IOG has recently formed the UTXO alliance and started collaboration with numerous partners like COTI and SingularityNET. It's a good start but more is needed to address the lack of communication, coordination and collaboration between blockchain communities. Missing awareness of each other's doings forces us to duplicate our efforts. When we are separate we are not able to learn from each other's achievements or failures.,Cardano has a strong, open and inclusive community, let's make this a real super power and let's be the first ones to forge strong bonds. Let's create an enriching, open and safe environment, where people from different communities can find common ground and share knowledge, resources, skills, ideas and visions with one another. Let's go out there, break the silos and build bridges and presence between us."
+        },
+        {
+            "title": "Here are some examples of potential DLT/Blockchain entities, communities and projects to explore and collaborate with:",
+            "content": ""
+        },
+        {
+            "title": "Cosmos",
+            "content": ""
+        },
+        {
+            "title": "Polkadot",
+            "content": "Academically impressive and technologically sound ,Boasting a throughput beyond 4,500 tps and near-instant finality, the EVM-compatible ,Other examples could be e.g."
+        },
+        {
+            "title": "Proposals you can submit to this challenge",
+            "content": "This is an open-ended challenge that welcomes any proposal geared for cross-chain collaboration, co-innovation and interoperability. These can be any community-led projects, initiatives, solutions, tools or services. It could mean for instance:\n\nNew technical implementations connecting Cardano to other blockchains and vice versa (SDKs, APIs, bridges etc)\n\tGovernance ideas from other chains implemented as part of the Voltaire road map\n\tAlready successful projects expanding from other chains to Cardano\n\tExpansion of Cardano-based projects into other chains\n\tOracles and other tools to interpret and interact with cross-chain data\n\tCatalyst-created solutions adopted by other chains and communities\n\tCommon research, education, outreach and innovation projects with other chains and communities (e.g. podcasts, hackathons, webinars, communication hubs, educational resources)"
+        },
+        {
+            "title": "Challenge Team",
+            "content": "We are seasoned Catalyst community members and \"interoperability maximalists\" who don't believe that any one chain should rule them all.\n\nFilip Blagojević is an active Project Catalyst member since Fund 2, Plutus Pioneer, Atala Pioneer and Emurgo Academy trainee.\n\tTomi Astikainen is a Veteran Community Advisor who has recently written a book for wannabe crypto investors. He is a Senior Ambassador for Acala/Karura and a driver in the Polkadot/Kusama community in Finland.\n\tFelix Weber is an active Project Catalyst member, Cardano Ambassador and initiator/leader of several community led Projects and initiatives."
+        },
+        {
+            "title": "Our assessment of the maturity of this proposed challenge:",
+            "content": "Cardano technology stack is finally mature enough to start inviting proposals for cross-chain collaboration and interoperability. Our proposed challenge is intentionally left open ended and it welcomes a multitude of different solutions. Worthwhile ideas submitted in this challenge should help grow and improve the Cardano and Catalyst community in the near term (next 6-9 months).,This challenge is therefore aligned with the Fund8 strategic goals:,The budget of $400,000 USD is a moderate 2,5% of the total treasury allocation for Fund8. It should be sufficient to kickstart interoperability and cross-chain collaboration initiatives but might not be enough for any large scale infrastructure projects. Therefore, \n\nIt helps prepare people to make contributions to the Cardano and Catalyst ecosystem.\n\tIt helps turn Cardano into an open source project recognized also beyond our community.\n\tIt accelerates the growth and evolution of our developer & app ecosystem by inviting contributions from the rest of the blockchain space."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "Interoperability of blockchains and multi-chain awareness guarantees shared success of the cryptoeconomy as a whole."
+        },
+        {
+            "title": "What does success look like?",
+            "content": "Collaborative value creation between Project Catalyst and other communities. Both technical and non-technical initiatives are welcome."
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "Mainnet and testnet transaction volume growth\n\tNumber of proposals including participants from other blockchain communities\n\tNumber of technical implementations connecting Cardano to other blockchains\n\tIdeas from other chains implemented by Catalyst\n\tProjects and dApps from other chains implemented on Cardano\n\tCatalyst-created solutions adopted by other chains/communities\n\tNumber of events / workshops / sessions arranged with other communities\n\tNumber of permanent initiatives with cross-chain teams (members from different blockchain communities together)"
+        }
+    ]
+}
