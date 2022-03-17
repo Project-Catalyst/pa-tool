@@ -4,6 +4,7 @@ import {
   Navbar,
   Message,
   Taginput,
+  Numberinput,
   Field,
   Input,
   Modal,
@@ -26,6 +27,7 @@ Vue.use(Button);
 Vue.use(Navbar);
 Vue.use(Message);
 Vue.use(Taginput);
+Vue.use(Numberinput);
 Vue.use(Field);
 Vue.use(Input);
 Vue.use(Modal);
