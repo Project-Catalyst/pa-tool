@@ -23,7 +23,6 @@
     <b-message type="is-info" has-icon>
       <p><b>Useful links for Community Advisors</b></p>
       <p>
-        Please read the <a href="https://docs.google.com/document/d/16aq9dNudJ5S3TEVQhBgRznTCoaF8SQezyActtVhec8E" target="_blank">onboarding document</a><br />
         Read the <a href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit" target="_blank">Community Advisor Assessment Guide</a><br />
         Watch the <a href="https://www.youtube.com/playlist?list=PLDLKmC_jWczVff7Gv6J5nmKLl52mVCT9q" target="_blank">the Catalyst School workshops for Community Advisors</a><br />
         Join the <a href="https://t.me/CatalystCommunityAdvisors" target="_blank">community advisor TG support channel</a>

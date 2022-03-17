@@ -25,9 +25,6 @@
           {{myAssessmentsLink}}
         </b-navbar-item>
         <b-navbar-dropdown right label="CA Resources">
-          <b-navbar-item tag="a" target="_blank" href="https://docs.google.com/document/d/16aq9dNudJ5S3TEVQhBgRznTCoaF8SQezyActtVhec8E">
-            Onboarding document
-          </b-navbar-item>
           <b-navbar-item tag="a" target="_blank" href="https://www.youtube.com/playlist?list=PLDLKmC_jWczVff7Gv6J5nmKLl52mVCT9q">
             Catalyst School workshops for CAs
           </b-navbar-item>
