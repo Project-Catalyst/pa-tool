@@ -193,10 +193,10 @@ export default {
       }
     },
     updateMinPrice(value) {
-      this.$store.commit("filters/setMinPrice", value)
+      this.$store.commit("filters/setMinPrice", value);
     },
     updateMaxPrice(value) {
-      this.$store.commit("filters/setMaxPrice", value)
+      this.$store.commit("filters/setMaxPrice", value);
     },
   },
   mounted() {
