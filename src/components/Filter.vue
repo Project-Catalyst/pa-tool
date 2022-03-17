@@ -78,7 +78,6 @@
       expanded
       controls-position="compact"
       controls-alignment="right"
-      @input="updateMinPrice"
     ></b-numberinput>
 
     <label class="mb-2 is-flex is-flex-wrap-wrap">
@@ -94,7 +93,6 @@
       expanded
       controls-position="compact"
       controls-alignment="right"
-      @input="updateMaxPrice"
     ></b-numberinput>
   </div>
 </template>
@@ -191,12 +189,6 @@ export default {
       } else {
         this.filteredTags = this.tags;
       }
-    },
-    updateMinPrice(value) {
-      this.$store.commit("filters/setMinPrice", value);
-    },
-    updateMaxPrice(value) {
-      this.$store.commit("filters/setMaxPrice", value);
     },
   },
   mounted() {
