@@ -34,11 +34,11 @@
       </div>
       <div class="mb-4" v-if="proposal.importance">
         <h4 class="mb-1">Why is it important? (max 140 char)</h4>
-        <p>{{proposal.importance}}</p>
+        <div v-html="proposal.importance"></div>
       </div>
       <div class="mb-4" v-if="proposal.importance">
         <h4 class="mb-1">How does success look like? (max 140 char)</h4>
-        <p>{{proposal.how_does_success_look_like_}}</p>
+        <div v-html="proposal.how_does_success_look_like_"></div>
       </div>
       <div class="mb-4" v-if="proposal.requested_funds">Requested funds: <b>{{proposal.requested_funds}}</b></div>
       <div class="mb-4" v-if="proposal.requested_funds_coti">Requested funds: <b>{{proposal.requested_funds_coti}}</b></div>
