@@ -87,9 +87,9 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import categories from '../assets/data/f8/categories.json'
-import tags from '../assets/data/f8/tags.json'
-import proposals from '../assets/data/f8/proposals.json'
+import categories from '../assets/data/f9/categories.json'
+import tags from '../assets/data/f9/tags.json'
+import proposals from '../assets/data/f9/proposals.json'
 import CFilter from '@/components/Filter'
 import Assessment from '@/components/Assessment'
 import ChallengeBrief from '@/components/ChallengeBrief'

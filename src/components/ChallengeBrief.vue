@@ -55,7 +55,7 @@ export default {
   methods: {
     updateText() {
       this.axios({
-        url:`data/challenges/f8/${this.challenge.id}.json`,
+        url:`data/challenges/f9/${this.challenge.id}.json`,
         baseURL: process.env.VUE_APP_BASE_URL
       }).then((res) => {
         this.brief = res.data

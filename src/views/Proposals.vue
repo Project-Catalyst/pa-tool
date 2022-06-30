@@ -19,9 +19,9 @@
 import { mapGetters } from "vuex";
 import CFilter from '@/components/Filter'
 import ProposalPreview from '@/components/ProposalPreview'
-import proposals from '../assets/data/f8/proposals.json'
-import tags from '../assets/data/f8/tags.json'
-import categories from '../assets/data/f8/categories.json'
+import proposals from '../assets/data/f9/proposals.json'
+import tags from '../assets/data/f9/tags.json'
+import categories from '../assets/data/f9/categories.json'
 
 export default {
   data() {

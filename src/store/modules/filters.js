@@ -1,6 +1,6 @@
 import router from '@/router'
-import staticProposals from '@/assets/data/f8/proposals.json'
-import categoriesJson from '@/assets/data/f8/categories.json'
+import staticProposals from '@/assets/data/f9/proposals.json'
+import categoriesJson from '@/assets/data/f9/categories.json'
 
 const allChallenge = categoriesJson[0]
 // initial state

@@ -1,7 +1,7 @@
 [
   {
     "c_id": 1,
-    "challenges": [26433,26434,26435,26436,26437,26438,26439,26440,26441,26442,26443,26444,26445,26446,26447,26448,26449,26450,26451,26452,26453,26454],
+    "challenges": [26593,26594,26595,26596,26597,26598,26599,26600,26601,26602,26603,26605],
     "question": "This proposal effectively addresses the challenge",
     "title": "Impact",
     "help": "Lorem ipsum",
@@ -16,7 +16,7 @@
   },
   {
     "c_id": 2,
-    "challenges": [26433,26434,26435,26436,26437,26438,26439,26440,26441,26442,26443,26444,26445,26446,26447,26448,26449,26450,26451,26452,26453,26454],
+    "challenges": [26593,26594,26595,26596,26597,26598,26599,26600,26601,26602,26603,26605],
     "question": "Given experience and plan presented it is highly likely this proposal will be implemented successfully",
     "title": "Feasibility",
     "help": "Lorem ipsum",
@@ -37,7 +37,7 @@
   },
   {
     "c_id": 3,
-    "challenges": [26433,26434,26435,26436,26437,26438,26439,26440,26441,26442,26443,26444,26445,26446,26447,26448,26449,26450,26451,26452,26453,26454],
+    "challenges": [26593,26594,26595,26596,26597,26598,26599,26600,26601,26602,26603,26605],
     "question": "The information provided is sufficient to audit the progress and the success of the proposal.",
     "title": "Clarity/Auditability",
     "help": "Lorem ipsum",
@@ -50,7 +50,7 @@
   },
   {
     "c_id": 1,
-    "challenges": [26455],
+    "challenges": [26604],
     "question": "This challenge is critical to achieve Cardano's mission.",
     "title": "Alignment",
     "help": "Lorem ipsum",
@@ -61,7 +61,7 @@
   },
   {
     "c_id": 2,
-    "challenges": [26455],
+    "challenges": [26604],
     "question": "The Catalyst community has the capacity to address the challenge.",
     "title": "Feasibility",
     "help": "Lorem ipsum",
@@ -73,7 +73,7 @@
   },
   {
     "c_id": 3,
-    "challenges": [26455],
+    "challenges": [26604],
     "question": "Success criteria and suggested metrics are set correctly to measure progress in addressing the challenge.",
     "title": "Verifiability",
     "help": "Lorem ipsum",
