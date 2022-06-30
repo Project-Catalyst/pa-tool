@@ -40,7 +40,7 @@
           <b-tooltip
             type="is-light"
             class=" is-flex is-flex-align-center"
-            label="To submit the assessment you have to copy-paste the content of the various criteria in the IdeaScale proposal page and mark the assessment as 'submitted' in the edit form in the ca-tool."
+            label="To submit the assessment you have to copy-paste the content of the various criteria in the IdeaScale proposal page and mark the assessment as 'submitted' in the edit form in the pa-tool."
             multilined>
             <b-icon
               class="mr-4"

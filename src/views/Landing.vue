@@ -5,7 +5,7 @@
         <div class="modal-card-body has-text-centered">
           <div class="title mb-6">Project Catalyst Fund7 Assess Stage<br />has not started yet!<br />Use the tool for testing!</div>
           <div class="counter-box mb-6" v-if="secsToRegistration > 0">
-            <span class="is-size-4 has-text-weight-bold">Community Advisors registrations starts in: </span>
+            <span class="is-size-4 has-text-weight-bold">Proposal Assessors registrations starts in: </span>
             <counter :d="toReg.d" :h="toReg.h" :m="toReg.m" :s="toReg.s" />
             <span class="is-size-4 has-text-weight-bold">{{ fRegistrationsStart }} UTC</span>
           </div>
@@ -19,7 +19,7 @@
           <b-button label="Close" @click="modalActivable = false" />
           <div class="subtitle ml-6">
             In the meantime take a look at the <a href="https://cardanocataly.st/en/community-advisor/guide.html" target="_blank">
-              CA Assessment Guide</a>.
+              PA Guide</a>.
           </div>
         </footer>
       </div>

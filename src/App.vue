@@ -24,15 +24,15 @@
         <b-navbar-item tag="router-link" :to="{ name: 'Assessed' }">
           {{myAssessmentsLink}}
         </b-navbar-item>
-        <b-navbar-dropdown right label="CA Resources">
+        <b-navbar-dropdown right label="PA Resources">
           <b-navbar-item tag="a" target="_blank" href="https://www.youtube.com/playlist?list=PLDLKmC_jWczVff7Gv6J5nmKLl52mVCT9q">
-            Catalyst School workshops for CAs
+            Catalyst School workshops for PAs
           </b-navbar-item>
           <b-navbar-item tag="a" target="_blank" href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU">
-            Assessment Guide
+            PA Guide
           </b-navbar-item>
           <b-navbar-item tag="a" target="_blank" href="https://t.me/CatalystCommunityAdvisors">
-            Telegram CAs chat
+            Telegram PAs chat
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>

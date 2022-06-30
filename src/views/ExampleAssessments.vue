@@ -3,7 +3,7 @@
     <div class="content">
       <p class="title">Example assessments from Fund 6 and Fund 7</p>
       <b-message>
-        This page collects all the assessments from Fund 6 and Fund 7 that were classified by the ~80% of the Veteran Community Advisor as "Excellent".<br />
+        This page collects all the assessments from Fund 6 and Fund 7 that were classified by the ~80% of the Veteran Proposal Assessors as "Excellent".<br />
         Use them as a reference to write high quality assessments and don't forget to take a look at the related proposal to have the correct context.
       </b-message>
     </div>

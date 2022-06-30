@@ -1,12 +1,12 @@
-# ca-tool
-The CA Tool is part of the AIM Community Tools, a collection of tools created to facilitate the process to the different Cardano Project Catalyst roles.
+# pa-tool
+The PA Tool is part of the AIM Community Tools, a collection of tools created to facilitate the process to the different Cardano Project Catalyst roles.
 
 [LIVE VERSION](https://cardanocataly.st/ca-tool/#/)
 
 The AIM Community Tools were first developed and used in Funds 4, 5 and 6 and our first proposal was funded in [Fund 5](https://cardano.ideascale.com/a/dtd/350981-48088).
 The updates to the tools were successfully funded in [Fund 6](https://cardano.ideascale.com/a/dtd/368917-48088).
 
-The __CA Tool__ was created to help Community Advisors in the selection of proposals with the lowest number of assessments in order to better distribute the workload among them and guarantee the minimum number of assessments required for all proposals.
+The __PA Tool__ was created to help Proposal Assessors in the selection of proposals with the lowest number of assessments in order to better distribute the workload among them and guarantee the minimum number of assessments required for all proposals.
 
 ## Features
 During the various funds a number of features were included, like:
@@ -14,7 +14,7 @@ During the various funds a number of features were included, like:
 - Proposal suggestion based on number of assessments
 - Proposal filtering by challenge
 - Mechanism to keep track of assessed proposals
-- Self-checklist for CAs with guiding questions to improve quality of assessments
+- Self-checklist for PAs with guiding questions to improve quality of assessments
 
 Other features will be added for fund7, you can track the progress [here](https://github.com/Project-Catalyst/ca-tool/projects/1).
 

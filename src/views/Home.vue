@@ -2,7 +2,7 @@
   <div class="home">
     <b-message>
       <p class="mb-1">
-        This is a community made tool to assist with the facilitation of the Community Advisor (CA) assessment process. It allows CAs to be assigned a proposal and to keep track of the overall proposals already assessed.
+        This is a community made tool to assist with the facilitation of the Proposal Assessor (PA) assessment process. It allows PAs to be assigned a proposal and to keep track of the overall proposals already assessed.
       </p>
       <p><b>How it works</b></p>
       <p>
@@ -21,11 +21,11 @@
       </p>
     </b-message>
     <b-message type="is-info" has-icon>
-      <p><b>Useful links for Community Advisors</b></p>
+      <p><b>Useful links for Proposal Assessors</b></p>
       <p>
-        Read the <a href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit" target="_blank">Community Advisor Assessment Guide</a><br />
-        Watch the <a href="https://www.youtube.com/playlist?list=PLDLKmC_jWczVff7Gv6J5nmKLl52mVCT9q" target="_blank">the Catalyst School workshops for Community Advisors</a><br />
-        Join the <a href="https://t.me/CatalystCommunityAdvisors" target="_blank">community advisor TG support channel</a>
+        Read the <a href="https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit" target="_blank">Proposal Assessor Guide</a><br />
+        Watch the <a href="https://www.youtube.com/playlist?list=PLDLKmC_jWczVff7Gv6J5nmKLl52mVCT9q" target="_blank">the Catalyst School workshops for Proposal Assessors</a><br />
+        Join the <a href="https://t.me/CatalystCommunityAdvisors" target="_blank">Proposal Assessor TG support channel</a>
       </p>
     </b-message>
     <suggest />
