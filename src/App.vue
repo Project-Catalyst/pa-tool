@@ -87,8 +87,8 @@ import Counter from '@/components/Counter'
 export default {
   data() {
     return {
-      assessStartsUTC: this.$dayjs.utc('2022-03-17 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
-      assessEndsUTC: this.$dayjs.utc('2022-03-25 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      assessStartsUTC: this.$dayjs.utc('2022-06-30 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+      assessEndsUTC: this.$dayjs.utc('2022-07-14 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
       now: this.$dayjs().utc().unix(),
       interval: false
     }
@@ -132,7 +132,7 @@ export default {
   },
   mounted() {
     if (window.localStorage) {
-      let oldKeys = ['ca-tool-default']
+      let oldKeys = ['ca-tool-default', 'ca-tool-f8-default']
       oldKeys.forEach((k) => {
         let oldKey = window.localStorage.getItem(k)
         if (oldKey) {
