@@ -1,0 +1,33 @@
+{
+    "text": "How can we create a positive developer experience that helps the developer focus on building successful apps?",
+    "tabs": [
+        {
+            "title": "Campaign Brief",
+            "content": "Without the supportive environment for developers, new innovations would be stalled. By supporting this challenge settings, more developers would be drawn into Cardano. There would be a bigger talent pool of developers that Catalyst projects can collaborate with and turn project concepts/Proof of concept into successful protocols which would enhance the growth of Cardano."
+        },
+        {
+            "title": "Guiding questions",
+            "content": "What are the the tools that we need to prioritize first\r\nHow do we attract developers from outside of our current community to participate in Catalyst?\r\nWhat do developers want, and how do they get it from the Cardano dev ecosystem?\r\nWhat would make it a developer motivated to grind through the docs and code no matter how hard it is to create an app?\r\nWhat are enterprise dev managers looking for in order to be able to build out enterprise projects - either internal or commercial?"
+        },
+        {
+            "title": "Potential directions",
+            "content": "Developer productivity: IDE's, scripts to automate stuff.\r\nKnowledge base & Documentation\r\nDeployment, testing, and monitoring frameworks\r\nSamples, recipes and templates\r\nHackathons\r\nDEFI and tokenization\r\nDashboards\r\nAPI's, and oracles.\r\nSupport structures\r\nIncentivization structures"
+        },
+        {
+            "title": "Notes",
+            "content": "This challenge is a continuation of F8: Developer Ecosystem ($1,000,000)\r\nThis challenge is a separate challenge from Open Source Developer Ecosystem. While we are advocates of open source, we recognize that not all teams are at the point where they feel comfortable or capable of open sourcing their solutions. Some APIs may be closed source forever, but still provide an overall net positive for the Cardano ecosystem. If you are all-in on open source from day one, definitely go with the Open Source Development Ecosystem challenge (if that's an option). We are rooting for you. We believe, however, there's room for both at this point."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "Creating an awesome experience that incentives developers, will lead to increased developer adoption, productivity, and creativity."
+        },
+        {
+            "title": "How does success looks like?",
+            "content": "Cardano attracts high-calibre Developers and developers have ample resources to work on platforms that suit their interests."
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "At the end of this challenge, we will be asking ourselves: Did we manage to make it easier for developers to build on top of Cardano?\r\n\r\n\r\n\r\nFilling in gaps defined in the exploration stage.\r\nNumber of developers actively building on top of Cardano\r\nNumber of repos on Github using the tooling. (Month over month increase)\r\nReduce wait time of unanswered communications with developers to 24 hours.\r\nA sense of community and conversations. Having people around to talk with.\r\n"
+        }
+    ]
+}
