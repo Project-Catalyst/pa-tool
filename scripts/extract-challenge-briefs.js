@@ -1,7 +1,7 @@
 const { transform } = require('./bin/helper')
 const { Value } = require('@gitbook/slate')
 const fs = require('fs')
-const challengesJson = require("./f8-challenges.json")
+const challengesJson = require("./f9-challenges.json")
 
 var challengeBriefs = []
 challengesJson.forEach(challenge => {

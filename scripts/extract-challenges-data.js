@@ -1,4 +1,4 @@
-const INPUT_FILE = "f8-challenges"
+const INPUT_FILE = "f9-challenges"
 const challengesJson = require(`./${INPUT_FILE}.json`);
 const fs = require('fs');
 

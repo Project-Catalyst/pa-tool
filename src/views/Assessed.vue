@@ -52,7 +52,7 @@
 <script>
 
 import { mapGetters } from "vuex";
-import proposals from '@/assets/data/f8/proposals.json'
+import proposals from '@/assets/data/f9/proposals.json'
 import csvHeaders from "@/assets/data/import-csv-headers.json";
 
 import downloadCsv from "@/utils/export-csv";
