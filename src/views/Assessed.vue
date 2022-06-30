@@ -8,7 +8,7 @@
         {{subheaderText}} <span class="is-size-6">[Including blanks]</span>
       </p>
       <b-message>
-      This page collects all the proposals that you assessed <b>within the ca-tool</b> and could be used to keep your assessments organized.<br /><br />
+      This page collects all the proposals that you assessed <b>within the pa-tool</b> and could be used to keep your assessments organized.<br /><br />
         Remember that you have to <b>copy-paste</b> each assessment in <b>IdeaScale</b> to officially submit them.<br /><br />
         This tool uses localStorage and cookies to store the progress of your work.<br />
         If you're using a setup where cookies are cleared at every browser launch, be careful because you may lose your work! You should export (download) the file, and re-import it every time or add a exception to your browser's settings.<br />

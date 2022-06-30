@@ -249,7 +249,7 @@ export default {
   methods: {
     createAssessment() {
       this.$buefy.dialog.confirm({
-        message: `I confirm that this tool is only to be used for compiling purposes. I understand that the assessments MUST be submitted through IdeaScale AND that this interface is saved locally on the browser meaning that data will be lost if the cache is cleared (it is possible to export and download the assessments in the ca-tool using the "Export" button in the "My assessments" page).`,
+        message: `I confirm that this tool is only to be used for compiling purposes. I understand that the assessments MUST be submitted through IdeaScale AND that this interface is saved locally on the browser meaning that data will be lost if the cache is cleared (it is possible to export and download the assessments in the pa-tool using the "Export" button in the "My assessments" page).`,
         trapFocus: true,
         onConfirm: () => {
           this.$store.commit('assessments/addAssessment', this.proposal.id)
