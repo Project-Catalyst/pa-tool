@@ -65,35 +65,31 @@
       <template #empty> There are no tags </template>
     </b-taginput>
 
-    <label class="mb-2 is-flex is-flex-wrap-wrap">
-      <span class="has-text-weight-bold mr-3"
-        >Filter proposals budget is more than:</span
-      >
-    </label>
-    <b-numberinput
-      v-model="minPrice"
-      :min="0"
-      :max="Number.MAX_SAFE_INTEGER"
-      :step="1000"
-      expanded
-      controls-position="compact"
-      controls-alignment="right"
-    ></b-numberinput>
+    <div class="columns">
+      <b-field class="mt-3 is-half column" label="Filter proposals budget is more than:">
+        <b-numberinput
+          v-model="minPrice"
+          :min="0"
+          :max="Number.MAX_SAFE_INTEGER"
+          :step="1000"
+          expanded
+          controls-position="compact"
+          controls-alignment="right"
+        ></b-numberinput>
+      </b-field>
 
-    <label class="mb-2 is-flex is-flex-wrap-wrap">
-      <span class="has-text-weight-bold mr-3"
-        >Filter proposals budget is less than:</span
-      >
-    </label>
-    <b-numberinput
-      v-model="maxPrice"
-      :min="0"
-      :max="Number.MAX_SAFE_INTEGER"
-      :step="1000"
-      expanded
-      controls-position="compact"
-      controls-alignment="right"
-    ></b-numberinput>
+      <b-field class="mt-3 is-half column" label="Filter proposals budget is less than:">
+        <b-numberinput
+          v-model="maxPrice"
+          :min="0"
+          :max="Number.MAX_SAFE_INTEGER"
+          :step="1000"
+          expanded
+          controls-position="compact"
+          controls-alignment="right"
+        ></b-numberinput>
+      </b-field>
+    </div>
   </div>
 </template>
 
