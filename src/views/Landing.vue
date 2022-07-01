@@ -18,7 +18,7 @@
         <footer class="modal-card-foot">
           <b-button label="Close" @click="modalActivable = false" />
           <div class="subtitle ml-6">
-            In the meantime take a look at the <a href="https://cardanocataly.st/en/community-advisor/guide.html" target="_blank">
+            In the meantime take a look at the <a href="https://bit.ly/CA-Guide" target="_blank">
               PA Guide</a>.
           </div>
         </footer>
