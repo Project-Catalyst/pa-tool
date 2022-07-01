@@ -5,6 +5,18 @@
         <b-navbar-item tag="router-link" :to="{ name: 'Home' }">
           <img src="@/assets/images/catalyst.png" alt="Project Catalyst" />
         </b-navbar-item>
+        
+        <b-navbar-item class="blink">
+          <b-tooltip position="is-bottom" type="is-light is-success" multilined>
+            <b-button class="blink-button" tag="a" target="_blank" href="https://cardanocataly.st/community-dashboard">
+              Community Dashboard
+            </b-button>
+            <template v-slot:content>
+              <b>Check out the new feature!</b><br>Access the AIM Dashboard and follow the on-going Asess Stage process.
+            </template>
+          </b-tooltip>
+        </b-navbar-item>
+          
         <b-navbar-item class="has-text-weight-bold" v-if="secsToAssess < 0 && secsToEndAssess > 0">
           <counter :text="'End of Assess Stage:'" :small="true" :d="toEndAssess.d" :h="toEndAssess.h" :m="toEndAssess.m" :s="toEndAssess.s" />
         </b-navbar-item>
@@ -157,5 +169,41 @@ body {
 }
 .aim-logo {
   width: 150px;
+}
+.blink-button {
+  background-color: Transparent !important;
+  border: none !important;
+  color: #eeeeee !important;
+  font-weight: bold;
+}
+.blink {
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 30px;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+}
+@keyframes glowing {
+  0% {
+    // background-color: #bff3b096;
+    box-shadow: 0 0 3px #2ba805;
+  }
+  50% {
+    background-color: #bef3b04d;
+    box-shadow: 0 0 10px #49e819;
+  }
+  100% {
+    // background-color: #bff3b096;
+    box-shadow: 0 0 3px #2ba805;
+  }
+}
+.blink {
+  animation: glowing 1700ms;
+  animation-iteration-count: 5;
+  animation-delay: 1.5s;
 }
 </style>
