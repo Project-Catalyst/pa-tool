@@ -29,9 +29,11 @@ const getters = {
     if (state.selectedTags.length > 0) {
       lproposals = lproposals.filter(proposal => proposal?.tags ? state.selectedTags.every(tag => proposal.tags.includes(tag)) : false)
     }
-    if (state.minPrice !== 0 || state.maxPrice !== Number.MAX_SAFE_INTEGER && state.maxPrice !== 0) {
-      lproposals = lproposals.filter(proposal => state.minPrice < proposal?.requested_funds && proposal?.requested_funds < state.maxPrice)
-    }
+
+    const currentMinPrice = state.minPrice || 0
+    const currentMaxPrice = state.maxPrice || Number.MAX_SAFE_INTEGER
+    lproposals = lproposals.filter(proposal => currentMinPrice < proposal?.requested_funds && proposal?.requested_funds < currentMaxPrice)
+
     let locAssessmentsIds = rootGetters['assessments/ids']
     if (locAssessmentsIds.length > 0) {
       lproposals = lproposals.filter(p => locAssessmentsIds.indexOf(p.id) === -1)
