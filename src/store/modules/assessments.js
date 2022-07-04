@@ -62,7 +62,8 @@ const mutations = {
   deleteAssessment (state, id) {
     var found = state.all.filter((assessment) => assessment.id === id)
     if (found.length > 0) {
-      state.all.splice(found, 1)
+      let index = state.all.indexOf(found[0])
+      state.all.splice(index, 1)
     }
   },
   setValue (state, data) {
