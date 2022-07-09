@@ -1,7 +1,7 @@
 # pa-tool
 The PA Tool is part of the AIM Community Tools, a collection of tools created to facilitate the process to the different Cardano Project Catalyst roles.
 
-[LIVE VERSION](https://cardanocataly.st/ca-tool/#/)
+[LIVE VERSION](https://cardanocataly.st/pa-tool/#/)
 
 The AIM Community Tools were first developed and used in Funds 4, 5 and 6 and our first proposal was funded in [Fund 5](https://cardano.ideascale.com/a/dtd/350981-48088).
 The updates to the tools were successfully funded in [Fund 6](https://cardano.ideascale.com/a/dtd/368917-48088).
