@@ -1,0 +1,25 @@
+{
+    "text": "How can Cardano-based solutions help meet real business needs and what would be their impact?",
+    "tabs": [
+        {
+            "title": "Description",
+            "content": "For years blockchain has held a promise that has not been properly filled. Spot solutions for e.g. traceability, supply chain management, identification and payments have been implemented but large scale benefits of this promising technology are yet to be seen. Based on years of rigorous research and development, Cardano is one of the most serious contenders to fulfill this promise.\nRecent and upcoming technological developments in Cardano—smart contracts, Yoroi dApp connector, larger block size (higher throughput), sidechains and state channels, to name a few—are gearing Cardano to be ready for large scale adoption in 2022.\nLarge corporations, small and medium sized enterprises (SMEs), platform businesses and highly networked startups have very different types of needs. Their industries may vary from finance and high-tech to agriculture and construction and from simple services to knowledge-intensive business. Yet, at the end of the day, they all need modern tools to keep fulfilling their mission, to remain relevant in global competition and to offer their employees the best tools to do what they were hired to do. Any company wants to engage their partners and employees, serve their customers better, improve their processes, cut costs, increase revenues and expand to new business areas.\nBy removing the middle man and automating processes, smart contract blockchain solutions can drive all of the above. Cardano can at least partly answer to these needs."
+        },
+        {
+            "title": "In this challenge, proposed solutions can be tools, services, products, process improvements, data management solutions (CRM, ERP, MES, DMP etc), decentralized cloud solutions, privacy and security related offerings or even metaverse-related solutions.",
+            "content": "In your proposal, it would be good to outline the extent, limits and scope of the solution readiness-level of the solution, and whether it is e.g.:\n\nA Feasibility Study / Proof of Concept / Minimum Viable Product that could be built on Cardano.\n\tAn existing business-ready product or service that could be converted to run on Cardano.\n\tA business-oriented training or consultancy service.\n\tAn existing blockchain solution brought into the Cardano ecosystem to serve business needs.\n\tA prototype or demo in operational environment\n\tA creation of model of a system or subsystem\n\tA process improvement\n\nWhen submitting proposals, please include the long-term vision, strategy and roadmap as well as short-term deliverables attainable in the next 6-9 months. Visualization and video materials are more than welcome to explain often complex business solutions."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "Companies are finally discovering the power of blockchain technologies and Cardano is ready to onboard exciting B2B and B2C solutions."
+        },
+        {
+            "title": "What does success look like?",
+            "content": "Innovative products and services that increase efficiency, transparency, and stakeholder engagement as well as expand business to new areas."
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "- # of Cardano dApps supporting business solutions\n\t- # of existing companies proposing Cardano-based solutions\n\t- # of partnerships / joint ventures created between companies\n\t- $ additional funding from other sources for the funded proposals\n\t- $ projected cost savings\n\t- $ projected revenue increase\n\t- % growth in mainnet / testnet activity due to business solutions"
+        }
+    ]
+}

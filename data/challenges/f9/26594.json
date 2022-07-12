@@ -1,0 +1,21 @@
+{
+    "text": "How can we make Cardano the go-to choice for building DAOs? What tools can we provide to enable effective DAO's Creation & Operation",
+    "tabs": [
+        {
+            "title": "Campaign Brief",
+            "content": "Currently if a DAO (even one that is aimed to build products and services around Cardano) wants to setup their DAO infrastructure, the current options are all based on, mostly, the Ethereum blockchain.\r\n\r\n\r\n\r\nThese dApps range from basic Treasury management, to Decision making in DAOs and even supporting services like Decentralized Justice. Some of them are:\r\n\r\n\r\n\r\nhttps:\/\/aragon.org\r\nhttps:\/\/daostack.io\r\nhttps:\/\/colony.io\r\nhttps:\/\/www.molochdao.com\r\nhttps:\/\/abridged.io\r\nhttps:\/\/kleros.io\r\n\r\n\r\nCardano needs:\r\n\r\nSimilar tools that offer superior features to those offered on other chains.\r\nEffective Collaboration Management Platforms to Organize Community Intentions and Actions\r\nAdditional not yet existing tools to give Cardano a distinct advantage \r\nTools for prospective organizations to use in evaluating the features available in Cardano DAO's\r\nDAO community collaboration \r\nDAO creation\r\nDAO operation\r\nDAO governance."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "Blockchain applications have moved from Currency to DeFi, to NFT. DAOs are Next.  Cardano needs to be ready for when that happens."
+        },
+        {
+            "title": "How does success looks like?",
+            "content": "There are no better ways to manage your DAO than to use Cardano DAOs. From Small Business to Global Communities.. Cardano DAOs deliver."
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "Number of Communities engaged in collaboration using Cardano DAO creation tools.\r\n\r\n\r\nAmount of ADA coming from DAOs transaction fees after the solutions on this challenge get implemented (> than the challenge's allocated fund amount)\r\n\r\n\r\nNumber of DAOs that use Cardano as governance\/management chain in 6 months.\r\n\r\n\r\nNumber of DAO toolset\/frameworks available for DAO Ops (>1)."
+        }
+    ]
+}

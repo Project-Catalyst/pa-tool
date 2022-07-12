@@ -1,0 +1,29 @@
+{
+    "text": "How can we create a positive developer experience that helps the developer focus on building successful apps?",
+    "tabs": [
+        {
+            "title": "Guiding questions",
+            "content": "What are the the tools that we need to prioritize first\n\tHow do we attract developers from outside of our current community to participate in Catalyst?\n\tWhat do developers want, and how do they get it from the Cardano dev ecosystem?\n\tWhat would make it a developer motivated to grind through the docs and code no matter how hard it is to create an app?\n\tWhat are enterprise dev managers looking for in order to be able to build out enterprise projects - either internal or commercial?"
+        },
+        {
+            "title": "Potential directions",
+            "content": "Developer productivity: IDE's, scripts to automate stuff.\n\tKnowledge base & Documentation\n\tDeployment, testing, and monitoring frameworks\n\tSamples, recipes and templates\n\tHackathons\n\tDEFI and tokenization\n\tDashboards\n\tAPI's, and oracles.\n\tSupport structures\n\tIncentivization structures"
+        },
+        {
+            "title": "How does this compare to the Open Source Development Ecosystem challenge?",
+            "content": "The difference is in the title. While we are advocates of open source, we recognize that not all teams are at the point where they feel comfortable or capable of open sourcing their solutions. Some APIs may be closed source forever, but still provide an overall net positive for the Cardano ecosystem. If you are all-in on open source from day one, definitely go with the Open Source Development Ecosystem challenge (if that's an option). We are rooting for you. We believe, however, there's room for both at this point."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "Creating an awesome experience that incentives developers, will lead to increased developer adoption, productivity, and creativity."
+        },
+        {
+            "title": "What does success look like?",
+            "content": "Cardano has a thriving dev ecosystem, developers are able to scale their businesses by monetizing the services that they provide."
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "At the end of this challenge, we will be asking ourselves: Did we manage to make it easier for developers to build on top of Cardano?\n\nFilling in gaps defined in the exploration stage.\n\tNumber of developers actively building on top of Cardano\n\tNumber of repos on Github using the tooling. (Month over month increase)\n\tReduce wait time of unanswered communications with developers to 24 hours.\n\tA sense of community and conversations. Having people around to talk with."
+        }
+    ]
+}

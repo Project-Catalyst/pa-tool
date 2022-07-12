@@ -1,0 +1,45 @@
+{
+    "text": "How can we ensure that the Cardano ecosystem is built on a framework which is owned by the community and equally accessible to all?",
+    "tabs": [
+        {
+            "title": "Context",
+            "content": "In the first iterations, Catalyst started as a Challenge proposed by the Catalyst team. Initially, the majority of its budget was destined to the Developer Ecosystem. For instance, in Fund 6, the Developer Ecosystem was assigned 1 mil. USD, that was 25% of the total 4 mil. available for the Fund.\nIn Fund 7, Catalyst released control of the budget to the community, which was able to choose the destination of the funding through voting. Unfortunately, the Developer Ecosystem challenge proposed for F7 was rejected because it did not receive enough votes. This led to the lack of an important resource stream that could have been used for the development of the Cardano technology."
+        },
+        {
+            "title": "The Open Source Development Ecosystem Challenge",
+            "content": "The OSDE challenge aims to provide a stream of resources to teams that want to develop their projects and contribute back to the community by sharing part of their efforts in terms of open source projects, open-source frameworks, and accessible knowledge.\nThe main idea is that projects funded by the community can both generate business value retained by the teams, and at the same time contribute back to the community by improving the ecosystem itself.\nFor example, a team can be funded to develop a project; generate business value by leveraging a profitable idea, and share the non-core-business part of their work in terms of shared knowledge or in terms of building frameworks or projects with other teams - such that is possible to solve complex problems by joining minds and dividing the efforts across different teams."
+        },
+        {
+            "title": "Motivation",
+            "content": "Catalyst exists to gradually work towards the final stage of the roadmap of Cardano: Voltaire. We are building tools to support new forms of governance and collaboration, on top of technology that is still being developed. The development of this technology itself, in the end, will have to become part of this same process as well. Such a complex and daunting task requires experts from a variety of disciplines to work together with a common goal."
+        },
+        {
+            "title": "Guiding questions:",
+            "content": "How can we ensure future efforts benefit from the work that is funded today?\n\tHow do we align between different open source community efforts?\n\tWhat are the next steps to fuse IOG development with the community?\n\tHow can we encourage experts to collaborate and share their knowledge and work?\n\tHow can we develop a sustainable ecosystem while sharing knowledge and efforts?"
+        },
+        {
+            "title": "Possible directions:",
+            "content": "Education for development in the Cardano & Catalyst ecosystem\n\tDeveloping common tools, frameworks, core infrastructures, or proof of concepts\n\tIncentive systems for development & hosting\n\tCommon audited repositories & overviews of existing solutions\n\tOrganizing events to bring the development ecosystem together\n\tCollaboration to improve interoperability within the ecosystem"
+        },
+        {
+            "title": "Note",
+            "content": "For a challenge with this budget and these aspirations, it is essential to have a broad consensus. If that support is present, then the results will be owned by the same ecosystem that supports its development."
+        },
+        {
+            "title": "Complimentary Challenges",
+            "content": "This challenge is about growing the open-source ecosystem by funding and improving projects that should share part of their efforts to make the ecosystem grow, and it is not to be confused with:\n*The Developer Ecosystem Challenge [1 mil](https://cardano.ideascale.com/a/dtd/Developer-Ecosystem/384822-48088) that focus on developer ecosystem not necessarily open source.\n*The Open Standards & Interoperability Challenge [500k](https://cardano.ideascale.com/a/dtd/Open-Standards-Interoperability/383619-48088) that aims to establish standards, processes, and foster interoperability.\nWe have aligned our efforts with these other challenges and aligned our budgets. We feel there is space for all three. Many open source projects start out as closed source and many contributors to open source projects started out as people using the open source as part of their own private project. We feel that having both is would lead to the best of both worlds. Splitting the challenge helps create a less competitive environment for the Open Source projects."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "We need to grow an entire ecosystem of experts to build and maintain the foundations of Cardano/Catalyst together with the current IOG teams"
+        },
+        {
+            "title": "What does success look like?",
+            "content": "A growing number of experts join forces to build collaboratively on community owned infrastructure, tooling, standards, libraries and docs"
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "- increase the number and the quality of Cardano Open Source projects\n- increase the number of contributors\n- increase of open source tools and frameworks from the community for the community (dog-fooding)"
+        }
+    ]
+}

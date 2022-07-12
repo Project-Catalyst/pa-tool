@@ -1,0 +1,45 @@
+{
+    "text": "What research and scaling implementations can be introduced to help Cardano increase scalability?",
+    "tabs": [
+        {
+            "title": "Description",
+            "content": "For Cardano to become a global leader as a smart contract blockchain it will need to scale to meet the requirements of handling hundreds of millions of users."
+        },
+        {
+            "title": "Current scaling situation",
+            "content": "Hydra is the leading project being executed by IOG to help Cardano scale the blockchain.\nThe first phase of Hydra will be available in 2022 however this initial implementation will not resolve all of the problems needed for Cardano to scale.\nSebastien from dcSpark recently discussed the importance of rollups and alternative solutions in an interview -\nhttps://www.youtube.com/watch?v=4DslvkLop04"
+        },
+        {
+            "title": "Need for more scaling options",
+            "content": "To reach true decentralization the Cardano community will need to not rely on the input from IOG as much as it does now as we move into the future.\nHydra will only have it's initial implementation released early next year. Cardano faces potential scaling problems in 2022 as high demand protocols in DeFi, NFTs and gaming begin and continue being released. With alternative scaling solutions not in place there is a risk of overloading demand on the main chain."
+        },
+        {
+            "title": "Types of proposals encouraged",
+            "content": "Proposers should consider new novel ideas or research, extensions of Hydra functionality or porting over solutions used in other blockchains that would be suitable for Cardano.\nProposers are welcome to focus on market specific scalability solutions - for instance a solution could focus on DeFi specifically with decentralized exchanges (DEX's) as a focus area or other growing markets that could benefit from novel scaling solutions.\nScalability topic areas:\n\nRollups (e.g. zero knowledge rollups, optimistic rollups)\n\tSharding\n\tSidechains\n\tState channels"
+        },
+        {
+            "title": "Size of proposals",
+            "content": "Scaling solutions are inherently complex and require significant engineering effort. As a result proposers should not be discouraged from making proposals that request most of the challenge budget. A single proposal team is both welcome and encouraged to request the entire budget if they can demonstrate an articulated plan with the technical expertise to address the challenge of scaling solutions that are suitable for growing Cardano."
+        },
+        {
+            "title": "Budget rationale",
+            "content": "High technical expertise is needed for scalability solutions. Projects will likely take many months of engineering effort to implement viable solutions."
+        },
+        {
+            "title": "Follow on funding rounds",
+            "content": "If this this challenge setting gets voted in and the proposal(s) submitted show signs they can be impactful then a follow on challenge will be submitted for fund 9 with a larger requested budget to further help the team(s) be able to request further funding."
+        },
+        {
+            "title": "Why is it important?",
+            "content": "Hydra will not solve every scaling problem in Cardano, more scaling solutions are needed as alternatives"
+        },
+        {
+            "title": "What does success look like?",
+            "content": "Scaling solutions that are introduced and implemented by the community that Cardano projects can start using"
+        },
+        {
+            "title": "Key Metrics to measure",
+            "content": "Number of scaling solutions available to the community to use within their projects\n\tNumber of projects launched on any of the new scaling solutions\n\tNovel ideas generated from research on different scaling approaches"
+        }
+    ]
+}
